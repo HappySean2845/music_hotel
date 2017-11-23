@@ -1,0 +1,186 @@
+/*重置样式*/
+html,body,p,input,h3 {
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+.content, .part {
+	width: 100%;
+	height: 100%;
+  overflow: hidden;
+}
+
+.part .article {
+  position: relative;
+}
+
+.part .article p{
+  letter-spacing: 0.04rem;
+  text-align: center;
+}
+
+.part .article .light {
+  position: absolute;
+  width: 3.65rem;
+  height: 3.27rem;
+  background-image: url(../img/p1_light.png);
+  background-size: cover;
+  z-index: 10;
+}
+
+.part .article .note {
+  position: absolute;
+  width: 0.4rem;
+  height: 1.11rem;
+  background-image: url(../img/p1_main_note.png);
+  background-size: cover;
+}
+
+.part_1 {
+  padding-top: 1.08rem;
+	background-image: url(../img/p1_bg.jpg);
+  background-size: cover;
+}
+
+.article p {
+  padding-bottom: 0.05rem;
+  font-size: 0.28rem;
+  color: #eac67d;
+}
+
+.article p span {
+  font-size: 0.4rem;
+  color: #fff;
+}
+
+.article1 .light {
+  left: -0.84rem;
+  bottom: -0.62rem;
+}
+
+.article1 .note {
+  bottom: 0.4rem;
+  left: 0.9rem;
+  transform: rotate(-15deg);
+}
+
+.article2 {
+  padding: 1.4rem 0 1.9rem; 
+}
+
+.article2 .light1 {
+  right: -0.4rem;
+  top: -0.9rem;
+}
+
+.article2 .note1 {
+  top: 0.26rem;
+  right: 1.16rem;  
+  transform: rotate(15deg);
+}
+
+.article2 .light2 {
+  left: -0.54rem;
+  top: 1.94rem;
+}
+
+.article2 .note2 {
+  top: 3.1rem;
+  left: 1.2rem;
+  transform: rotate(-15deg);
+}
+
+
+.article3 {
+  text-align: center;
+}
+
+.article3 .btn {
+  display: inline-block;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-image: url(../img/icon_btn.png);
+  background-size: cover;
+}
+
+.article3 .comment {
+  margin-left: 1.87rem;
+  width: 3.76rem;
+  height: 0.36rem;
+  background-image: url(../img/p1_font.png);
+  background-size: 100%;
+  background-repeat: no-repeat; 
+}
+
+.tips {
+  text-align: center;
+  color: #684d6d;
+  font-size: 0.26rem;
+}
+
+.part_2 {
+  background-image: url(../img/p2_bg.jpg);
+  background-size: cover;
+}
+
+.part_2 .part_head {
+  padding: 0.4rem 0 0.5rem;
+}
+
+.part_2 .part_head  h3{
+  line-height: 0.56rem;
+  text-align: center;
+  font-size: 0.36rem;
+  color: #fff;
+}
+
+.item {
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.item1 {
+  height: 3.14rem;
+  background-image: url(../img/citigo.png);
+  background-position: 2.62rem 0.28rem;
+}
+
+.item2 {
+  height: 3.53rem;
+  background-image: url(../img/hanting.png);
+  background-position: -0.42rem 0.33rem;
+  text-align: right;
+}
+
+.item3 {
+  height: 3.76rem;
+  background-image: url(../img/manxin.png);
+  background-position: 3.68rem 0;
+}
+
+.item .article {
+  display: inline-block;
+}
+
+.item1 .article {
+  width: 2.62rem;
+}
+
+.item2 .article {
+  width: 3.91rem;
+}
+
+.item3 .article {
+  width: 3.68rem;
+}
+
+.part_3 {
+  background-image: url(../img/p3_bg.jpg);
+  background-size: cover;
+}

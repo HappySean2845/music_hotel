@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+	<meta charset='utf-8'>
+	<meta name="description" content="华住音乐酒店"/>
+   <meta name="keywords" content="华住音乐酒店"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<title>华住</title>
+</head>
+<body>
+	<div class="content">
+		<!-- 第一页 -->
+		<div id="part_1" class="part part_1">
+			<div class="article article1">
+				<p>穿梭在<span>车水马龙</span>的建筑丛林间，</p>
+				<p>有没有那么<span>一瞬间</span>，</p>
+				<p><span>怀疑自己</span>走错了方向，</p>
+				<p><span>担心</span>被这座城市<span>吞噬</span></p>
+				<p>......</p>
+				<div class="light"></div>
+				<div class="note"></div>
+			</div>
+
+			<div class="article article2">
+				<p>这一次，</p>
+				<p>你该<span>用心</span>找寻</p>
+				<p>独一无二的<span>精神领地</span>了</p>
+				<div class="light light1"></div>
+				<div class="note note1"></div>
+				<div class="light light2"></div>
+				<div class="note note2"></div>
+			</div>
+
+			<div class="article article3">
+				<div class="btn">
+					
+				</div>
+				<p class="comment"></p>
+				<p class="tips">(长按屏幕)</div>
+			</div>
+
+		</div>
+
+		<!-- 第二页 -->
+		<div id="part_2" class="part part_2">
+			<!-- <p>让手机导航<span>暂时失灵</span>吧，</p>
+			<p><span>别再依赖</span>虚伪的安全感，</p> -->
+			<div class="part_head">
+				<h3>哪一个才是你心中的唯一？</h3>
+				<p class="tips">(请点选一个你心仪的音符)</p>
+			</div>
+			<div class="item item1">
+				<div class="tit"></div>
+				<div class="article">
+					<p>你坐在<span>朝西</span>的阳台</p>
+					<p>让寂寞随寒冷的秋风</p>
+					<p>吹乱你的心</p>
+				</div>
+			</div>
+			<div class="item item2">
+				<div class="tit"></div>
+				<div class="article">
+					<p>眼前浮曾经漂泊的身影</p>
+					<p>短暂又漫长的这段人生</p>
+					<p>唯有<span>向前</span></p>
+				</div>
+			</div>
+			<div class="item item3">
+				<div class="tit"></div>
+				<div class="article">
+					<p>回忆好像是一场梦</p>
+					<p>搁浅了太多</p>
+					<p>故事向左你却<span>向右</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		(function (doc, win) {
+        var docEl = doc.documentElement,
+            size = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=750){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener('resize', size, false);
+        doc.addEventListener('DOMContentLoaded', size, false);
+    })(document, window);
+	</script>
+	<script type="text/javascript" src="js/index.js"></script>	
+</body>
+</html>
