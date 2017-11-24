@@ -324,6 +324,74 @@ html, body {
   background-size: 100%;
 }
 
+.part_3 .touch {
+  position: absolute;
+  left: 1.35rem;
+  bottom: 2.8rem;
+  font-size: 0
+}
+
+.part_3 .touch_lack {
+  width: 4.8rem;
+  height: 0.72rem;
+  font-size: 0;
+}
+
+.part_3 .touch_tips {
+  display: inline-block;
+  width: 3.57rem;
+  height: 0.36rem;
+  background-image: url(../img/p3_tips_font.png);
+  background-size: 100%;
+}
+
+.part_3 .tips {
+  margin-top: 0.2rem;
+}
+
+.touch_lack .key {
+  float: left;
+  display: inline-block;
+  margin-top: 0.23rem;
+  width: 0.43rem;
+  height: 0.26rem;
+  background-image: url(../img/p3_key.png);
+  background-size: 100%;
+}
+
+.touch_lack .line {
+  display: inline-block;
+  margin-top: 0.32rem;
+  width: 3.55rem;
+  height: 0.07rem;
+  text-align: justify;
+  text-align-last: justify;
+  vertical-align: top;
+}
+
+.touch_lack .line:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.touch_lack .line em {
+  display: inline-block;
+  width: 0.07rem;
+  height: 0.07rem;
+  background-color: #fff;
+}
+
+.touch_lack .lack {
+  float: right;
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.53rem;
+  vertical-align: top;
+  background-image: url(../img/p3_lack.png);
+  background-size: 100%;
+}
+
 .part_3 .bottom_bg {
   position: absolute;
   bottom: 0;
