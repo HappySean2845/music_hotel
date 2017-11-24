@@ -7,6 +7,14 @@ html,body,p,input,h3 {
 html, body {
 	width: 100%;
 	height: 100%;
+  font-family: "MyWebFont", "Helvetica";
+}
+
+@font-face {
+  font-family: "MyWebFont";
+  src: url(webfont.ttf),
+       url(webfont.woff),
+       url(webfont.eot) ;
 }
 
 .content, .part {
@@ -95,7 +103,6 @@ html, body {
   transform: rotate(-15deg);
 }
 
-
 .article3 {
   text-align: center;
 }
@@ -140,6 +147,7 @@ html, body {
 }
 
 .item {
+  position: relative;
   width: 100%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -166,21 +174,161 @@ html, body {
 
 .item .article {
   display: inline-block;
+  padding: 0 0.1rem 0 0.3rem;
+  text-align: center;
+  font-size: 0;
 }
 
-.item1 .article {
-  width: 2.62rem;
+.item .tit {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.1rem;
+  width: 0.5rem;
+  height: 0.6rem;
+  background-size: 100%;
 }
 
-.item2 .article {
-  width: 3.91rem;
+.item .tit:before, .item .tit:after {
+  position: absolute;
+  top: 0.26rem;
+  content: '';
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.03rem;
+  background-color: #eac67d;
 }
 
-.item3 .article {
-  width: 3.68rem;
+.item .tit:before {
+  left: -0.5rem;
+}
+
+.item .tit:after {
+  right: -0.6rem;
+}
+
+.item .light {
+  position: absolute;
+  width: 0.5rem;
+  height: 1.11rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+.item .note {
+  position: absolute;
+  width: 0.5rem;
+  height: 1.11rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.item1 .tit {
+  width: 0.32rem;
+  height: 0.48rem;
+  background-image: url(../img/p2_tit_note_01.png);
+}
+
+.item1 .light {
+  top: -1.07rem;
+  right: 0.46rem;
+  width: 3.77rem;
+  height: 3.58rem;
+  background-image: url(../img/p2_light_01.png);
+}
+
+.item1 .note {
+  top: 0.4rem;
+  right: 2rem;
+  width: 0.5rem;
+  height: 0.81rem;
+  background-image: url(../img/p2_note_01.png);
+}
+
+.item2 .tit {
+  width: 0.32rem;
+  height: 0.55rem;
+  background-image: url(../img/p2_tit_note_02.png);
+}
+
+.item2 .light {
+  top: -0.66rem;
+  left: -0.83rem;
+  width: 3.38rem;
+  height: 3.18rem;
+  background-image: url(../img/p2_light_02.png);
+}
+
+.item2 .note {
+  top: 0.4rem;
+  left: 0.75rem;
+  background-image: url(../img/p1_main_note.png);
+  transform: rotate(-15deg);
+}
+
+.item3 .tit {
+  margin-top: 0.05rem;
+  width: 0.44rem;
+  height: 0.45rem;
+  background-image: url(../img/p2_tit_note_03.png);
+}
+
+.item3 .light {
+  top: -1.68rem;
+  right: 0.7rem;
+  width: 4.37rem;
+  height: 4.27rem;
+  background-image: url(../img/p2_light_03.png);
+}
+
+.item3 .note {
+  top: 0.1rem;
+  right: 2.65rem;
+  background-image: url(../img/p2_note_03.png);
+  transform: rotate(15deg);
 }
 
 .part_3 {
+  position: relative;
   background-image: url(../img/p3_bg.jpg);
   background-size: cover;
+  text-align: center;
+}
+
+.part_3 .article {
+  position: absolute;
+  width: 100%;
+  top: 4.86rem;
+}
+
+.part_3 .head_tit {
+  height: 2.44rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.part_3 .head_tit .head_tit_bg {
+  display: inline-block;
+  height: 0.42rem;
+  width: 4.43rem;
+  background-image: url(../img/p3_head_tit.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.part_3 .theme_font {
+  display: inline-block;
+  margin-bottom: 1.3rem;
+  width: 3.86rem;
+  height: 0.93rem;
+  background-image: url(../img/p3_theme_font.png);
+  background-size: 100%;
+}
+
+.part_3 .bottom_bg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3.05rem;
+  background-image: url(../img/p3_record.png);
+  background-size: 100%;
 }
