@@ -1,13 +1,13 @@
 /*重置样式*/
 html,body,p,input,h3 {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 html, body {
-	width: 100%;
-	height: 100%;
-  font-family: "MyWebFont", "Helvetica";
+  width: 100%;
+  height: 100%;
+  font-family: "MyWebFont";
 }
 
 @font-face {
@@ -18,8 +18,8 @@ html, body {
 }
 
 .content, .part {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -55,7 +55,7 @@ html, body {
 
 .part_1 {
   padding-top: 1.08rem;
-	background-image: url(../img/p1_bg.jpg);
+  background-image: url(../img/p1_bg.jpg);
   background-size: cover;
 }
 
@@ -82,7 +82,7 @@ html, body {
 }
 
 .article2 {
-  padding: 1.4rem 0 1.9rem; 
+  padding: 1.4rem 0 1.9rem;
 }
 
 .article2 .light1 {
@@ -92,7 +92,7 @@ html, body {
 
 .article2 .note1 {
   top: 0.26rem;
-  right: 1.16rem;  
+  right: 1.16rem;
   transform: rotate(15deg);
 }
 
@@ -125,7 +125,7 @@ html, body {
   height: 0.36rem;
   background-image: url(../img/p1_font.png);
   background-size: 100%;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
 
 .tips {

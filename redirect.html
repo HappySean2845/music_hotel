@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+  <meta charset='utf-8'>
+  <meta name="description" content="华住音乐酒店"/>
+    <meta name="keywords" content="华住音乐酒店"/>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <meta name="msapplication-tap-highlight" content="no">
+  <title></title>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+function $_GET(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+  var r = $window.location.search.substr(1).match(reg);
+  if (r != null) return unescape(r[2]);
+  return null;
+}
+var f = $_GET('from');
+if(f=='hotel'){
+  window.location.href="web.html";
+}else{
+  window.location.href="hotel.html";
+}
+</script>
+</body>
+</html>

@@ -13,148 +13,148 @@
 }
 
 .part_1 .step_1 .p1 {
-	opacity: 0;
+  opacity: 0;
   transform: translateY(0.4rem);
-  transition: all 2s ease 1s;
+  transition: all .5s ease 1s;
 }
 
 .part_1 .step_1 .p2 {
-	opacity: 0;
+  opacity: 0;
   transform: translateY(0.4rem);
-  transition: all 2s ease 2s;
+  transition: all .5s ease 2s;
 }
 
 .part_1 .step_1 .p3 {
-	opacity: 0;
+  opacity: 0;
   transform: translateY(0.4rem);
-  transition: all 2s ease 3s;
+  transition: all .5s ease 3s;
 }
 
 .part_1 .step_1 .p4 {
-	opacity: 0;
+  opacity: 0;
   transform: translateY(0.4rem);
-  transition: all 2s ease 4s;
+  transition: all .5s ease 4s;
 }
 
 .part_1 .step_1 .p5 {
-	opacity: 0;
+  opacity: 0;
   transform: translateY(0.4rem);
-  transition: all 2s ease 5s;
+  transition: all .5s ease 5s;
 }
 
 
 .animate .step_1 .p1 {
-	opacity: 1;
+  opacity: 1;
   transform: translateY(0);
 }
 
 .animate .step_1 .p2 {
-	opacity: 1;
+  opacity: 1;
   transform: translateY(0);
 }
 
 .animate .step_1 .p3 {
-	opacity: 1;
+  opacity: 1;
   transform: translateY(0);
 }
 
 .animate .step_1 .p4 {
-	opacity: 1;
+  opacity: 1;
   transform: translateY(0);
 }
 
 .animate .step_1 .p5 {
-	opacity: 1;
+  opacity: 1;
   transform: translateY(0);
 }
 
 .part_1 .step_2 .p1 {
-	opacity: 0;
+  opacity: 0;
   transform: translateY(0.1rem);
   transition: all 2s ease 7s;
 }
 
 .part_1 .step_2 .p2 {
-	opacity: 0;
+  opacity: 0;
   transform: translateY(0.2rem);
   transition: all 2s ease 8s;
 }
 
 .part_1 .step_2 .p3 {
-	opacity: 0;
+  opacity: 0;
   transform: translateY(0.3rem);
   transition: all 2s ease 9s;
 }
 
 .animate .step_2 .p1 {
-	opacity: 1;
+  opacity: 1;
   transform: translateY(0);
 }
 
 .animate .step_2 .p2 {
-	opacity: 1;
+  opacity: 1;
   transform: translateY(0);
 }
 
 .animate .step_2 .p3 {
-	opacity: 1;
+  opacity: 1;
   transform: translateY(0);
 }
 
 .part_1 .step_3 .p1 {
-	opacity: 0;
+  opacity: 0;
   transform: translateY(0.1rem);
   transition: all 2s ease 11s;
 }
 
 .part_1 .step_3 .p2 {
-	opacity: 0;
+  opacity: 0;
   transform: translateY(0.2rem);
   transition: all 2s ease 12s;
 }
 
 .part_1 .step_3 .p3 {
-	opacity: 0;
+  opacity: 0;
   transform: translateY(0.3rem);
   transition: all 2s ease 13s;
 }
 
 .animate .step_3 .p1 {
-	opacity: 1;
+  opacity: 1;
   transform: translateY(0);
 }
 
 .animate .step_3 .p2 {
-	opacity: 1;
+  opacity: 1;
   transform: translateY(0);
 }
 
 .animate .step_3 .p3 {
-	opacity: 1;
+  opacity: 1;
   transform: translateY(0);
 }
 
 .scale_1 {
-	opacity: 1
-	transform: scale(1.2, 1,2);
+  opacity: 1
+  transform: scale(1.2, 1,2);
 }
 
 .scale_btn {
-	animation: scale_btn 1.5s linear 13s infinite alternate;
+  animation: scale_btn 1.5s linear 13s infinite alternate;
 }
 
 @keyframes scale_btn {
   0% {
-		transform: scale(0.9, 0.9);
-		opacity: 0.6;
+    transform: scale(0.9, 0.9);
+    opacity: 0.6;
   }
   50% {
-		transform: scale(0.95, 0.95);
-		opacity: 0.8;
+    transform: scale(0.95, 0.95);
+    opacity: 0.8;
   }
   100% {
-		transform: scale(1, 1);
-		opacity: 1;
+    transform: scale(1, 1);
+    opacity: 1;
   }
 }
 
@@ -164,5 +164,5 @@
 }
 
 .animate .step_3 {
-  
+
 }
