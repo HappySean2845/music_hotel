@@ -10,12 +10,24 @@ $(function() {
 	});
 
 	function togglePage(){
-		$('.part_1').fadeOut(800);
-    	$('.part_2').fadeIn(800);
+		$('.part_1').fadeOut(500);
+    $('.part_2').fadeIn(500);
 	}
 
 	setTimeout(function() {
 		$("#container").addClass("animate");
 	}, 500);
+
+	
+	
+	var p2_note = document.querySelector('.part_2').querySelectorAll('.note');
+	for(var i = 0; i < 3; i++){
+		(function(t){
+			var item = p2_note[t];
+			item.onclick = function(){
+				$(item).prev().css('display', 'block');
+			};
+		})(i);
+	}
 
 });

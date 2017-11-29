@@ -160,20 +160,20 @@ html, body {
 .item1 {
   height: 3.14rem;
   background-image: url(../img/citigo.png);
-  background-position: 2.62rem 0.28rem;
+  background-position: 2.92rem 0.28rem;
 }
 
 .item2 {
   height: 3.53rem;
   background-image: url(../img/hanting.png);
-  background-position: -0.42rem 0.33rem;
+  background-position: -0.12rem 0.33rem;
   text-align: right;
 }
 
 .item3 {
   height: 3.76rem;
   background-image: url(../img/manxin.png);
-  background-position: 3.68rem 0;
+  background-position: 3.98rem 0;
 }
 
 .item .article {
@@ -217,6 +217,7 @@ html, body {
   background-size: 100%;
   background-repeat: no-repeat;
   z-index: 10;
+  display: none;
 }
 
 .item .note {
