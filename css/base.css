@@ -16,7 +16,7 @@ html, body {
        url(webfont.woff),
        url(webfont.eot) ;
 }
-
+iframe{width:7.5rem;}
 .content, .part {
   width: 100%;
   height: 100%;
