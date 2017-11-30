@@ -395,3 +395,7 @@ iframe{width:7.5rem;}
   background-image: url(../img/p3_lack.png);
   background-size: 100%;
 }
+canvas{
+  width:7.5rem;
+  height:7.5rem;
+}
