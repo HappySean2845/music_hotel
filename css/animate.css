@@ -92,7 +92,7 @@
 
 .part_1 .step_2 .p3 {
   opacity: 0;
-  transform: translateY(0.3rem);
+  transform: translateY(0.2rem);
   transition: all .5s ease 5s;
 }
 
@@ -123,7 +123,7 @@
 
 .part_1 .step_3 .p3 {
   opacity: 0;
-  transform: translateY(0.2rem);
+  transform: translateY(0.1rem);
   transition: all .5s ease 7s;
 }
 

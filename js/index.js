@@ -2,18 +2,39 @@ $(function() {
 	var p1_btn = document.getElementById("p1_btn");
 	var dis_tim = 2000;
 	var timeout = undefined;
-	p1_btn.addEventListener('touchstart', function() {
-		timeout = setTimeout(togglePage2(), dis_tim);
+	//长按屏幕
+	var sTime = 0;
+	var eTime = 0;
+	var flag = false;
+	p1_btn.addEventListener('touchstart', function(event) {
+		sTime = new Date().getTime();
+		timeout = setTimeout(function(){
+			flag = true;
+			togglePage2();
+		}, dis_tim);
 	}, false);
-	p1_btn.addEventListener('touchend', function() {
-		clearTimeout(timeout);
+
+	p1_btn.addEventListener('touchmove', function(event) {
+		event.preventDefault();
+	});
+
+	p1_btn.addEventListener('touchend', function(event) {
+		eTime = new Date().getTime();
+
+		if(eTime - sTime > dis_tim && !flag){
+			togglePage2()
+		}else {
+			console.log('长按');
+			clearTimeout(timeout);
+		}
+
 	});
 
 	function togglePage2(){
 		$('.part_1').removeClass('animate');
 		$('.part_1').fadeOut(500);
 		$('.part_2').fadeIn(500);
-    	$('.part_2').addClass('animate');
+    $('.part_2').addClass('animate');
 	}
 
 	setTimeout(function() {
