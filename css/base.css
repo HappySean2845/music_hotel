@@ -39,6 +39,7 @@ html, body {
   background-image: url(../img/p1_light.png);
   background-size: cover;
   z-index: 10;
+  opacity: 0;
 }
 
 .part .article .note {
@@ -47,6 +48,7 @@ html, body {
   height: 1.11rem;
   background-image: url(../img/p1_main_note.png);
   background-size: cover;
+  opacity: 0;
 }
 
 .hide {
@@ -157,23 +159,24 @@ html, body {
   background-repeat: no-repeat;
 }
 
+.item .article p {
+  letter-spacing: 0.08rem;
+}
+
 .item1 {
   height: 3.14rem;
   background-image: url(../img/citigo.png);
-  background-position: 2.92rem 0.28rem;
 }
 
 .item2 {
   height: 3.53rem;
   background-image: url(../img/hanting.png);
-  background-position: -0.12rem 0.33rem;
   text-align: right;
 }
 
 .item3 {
   height: 3.76rem;
   background-image: url(../img/manxin.png);
-  background-position: 3.98rem 0;
 }
 
 .item .article {
@@ -300,13 +303,60 @@ html, body {
   text-align: center;
 }
 
-.part_3 .article {
+.part_3 .theme_p {
   position: absolute;
   width: 100%;
-  top: 4.86rem;
+  top: 5.46rem;
 }
 
-.part_3 .head_tit {
+.part_3 .head_bg {
+  height: 3.84rem;
+  width: 7.5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.part_3 .head_bg .article {
+  width: 3rem;
+}
+
+.part_3 .head_bg .article p {
+  line-height: 0.5rem;
+  text-align: left;
+  letter-spacing: 0.08rem;
+}
+
+.part_3 .head_bg1 {
+  background-image: url(../img/citigo.png);
+  background-position: 1.3rem 0.2rem;
+}
+
+.part_3 .head_bg1 .article {
+  padding: 1.35rem 0 0 0.54rem;
+}
+
+.part_3 .head_bg2 {
+  text-align: right;
+  background-image: url(../img/hanting.png);
+  background-position: -0.42rem 0.43rem;
+}
+
+.part_3 .head_bg2 .article {
+  display: inline-block;
+  width: 2.7rem;
+  padding-top: 1.1rem;
+}
+
+.part_3 .head_bg3 {
+  background-image: url(../img/manxin.png);
+  background-position: 3.6rem 0.55rem;
+}
+
+.part_3 .head_bg3 .article {
+  padding: 1.35rem 0 0 0.54rem;
+}
+
+/*.part_3 .head_tit {
   height: 2.44rem;
   padding-top: 1rem;
   text-align: center;
@@ -319,8 +369,12 @@ html, body {
   background-image: url(../img/p3_head_tit.png);
   background-size: 100%;
   background-repeat: no-repeat;
-}
+}*/
+
 .part_3 .theme_font {
+  position: absolute;
+  top: 4.05rem;
+  left: 1.82rem;
   display: inline-block;
   margin-bottom: 1.3rem;
   width: 3.86rem;
@@ -332,7 +386,7 @@ html, body {
 .part_3 .touch {
   position: absolute;
   left: 1.35rem;
-  bottom: 3.4rem;
+  bottom: 2.6rem;
   font-size: 0
 }
 

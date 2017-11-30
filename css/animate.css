@@ -1,3 +1,25 @@
+.part_1 .article .note1 {
+  opacity: 0;
+  transition: all 1.5s ease 2s;
+  transition-property: opacity;
+}
+
+.part_1 .article .note2 {
+  opacity: 0;
+  transition: all 1.5s ease 2.5s;
+  transition-property: opacity;
+}
+
+.part_1 .article .note3 {
+  opacity: 0;
+  transition: all 1.5s ease 3s;
+  transition-property: opacity;
+}
+
+.animate .article .note {
+  opacity: 1;
+}
+
 .part_1 .step_1 p{
   transition-property: opacity,transform;
 }
@@ -33,13 +55,13 @@
 .part_1 .step_1 .p4 {
   opacity: 0;
   transform: translateY(0.2rem);
-  transition: all .5s ease 3s;
+  transition: all .5s ease 2.5s;
 }
 
 .part_1 .step_1 .p5 {
   opacity: 0;
   transform: translateY(0.2rem);
-  transition: all .5s ease 4s;
+  transition: all .5s ease 2.5s;
 }
 
 
@@ -71,19 +93,19 @@
 .part_1 .step_2 .p1 {
   opacity: 0;
   transform: translateY(0.1rem);
-  transition: all .5s ease 6s;
+  transition: all .5s ease 4s;
 }
 
 .part_1 .step_2 .p2 {
   opacity: 0;
   transform: translateY(0.2rem);
-  transition: all .5s ease 7s;
+  transition: all .5s ease 4.5s;
 }
 
 .part_1 .step_2 .p3 {
   opacity: 0;
   transform: translateY(0.3rem);
-  transition: all .5s ease 8s;
+  transition: all .5s ease 5s;
 }
 
 .animate .step_2 .p1 {
@@ -104,19 +126,19 @@
 .part_1 .step_3 .p1 {
   opacity: 0;
   transform: translateY(0.1rem);
-  transition: all 2s ease 10s;
+  transition: all .5s ease 6s;
 }
 
 .part_1 .step_3 .p2 {
   opacity: 0;
   transform: translateY(0.2rem);
-  transition: all 2s ease 11s;
+  transition: all .5s ease 6.5s;
 }
 
 .part_1 .step_3 .p3 {
   opacity: 0;
   transform: translateY(0.3rem);
-  transition: all 2s ease 12s;
+  transition: all .5s ease 7s;
 }
 
 .animate .step_3 .p1 {
@@ -140,7 +162,7 @@
 }
 
 .scale_btn {
-  animation: scale_btn 1.5s linear 13s infinite alternate;
+  animation: scale_btn 1.5s linear 6.5s infinite alternate;
 }
 
 @keyframes scale_btn {
@@ -158,37 +180,94 @@
   }
 }
 
+.opacity_light1 {
+  animation: opacity_note 1.5s linear 4s infinite alternate;
+}
 
-/*.animate .item1 {
-  transition: all .5s ease 3s;
-}*/
+.opacity_light2 {
+  animation: opacity_note 1.5s linear 4.5s infinite alternate;
+}
+
+.opacity_light3 {
+  animation: opacity_note 1.5s linear 5s infinite alternate;
+}
+
+@keyframes opacity_note {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .item1 {
-  transition: all .5s ease 3s;
-  background-position: 2.92rem 0.28rem;
+  transition: all .3s ease 0.8s;
+  opacity: 0;
+  background-position: 2.82rem 0.28rem;
+}
+
+.item1 .article {
+  transition: all .3s ease 0.8s;
+  opacity: 0;
+  transform: translate(-0.2rem);
 }
 
 .item2 {
-  transition: all .5s ease 3s;
-  background-position: -0.12rem 0.33rem;
+  transition: all .3s ease 1s;
+  opacity: 0;
+  background-position: -0.62rem 0.33rem;
+}
+
+.item2 .article {
+  transition: all .3s ease 1s;
+  opacity: 0;
+  transform: translate(0.2rem);  
 }
 
 .item3 {
-  transition: all .5s ease 3s;
-  background-position: 3.98rem 0;
+  transition: all .3s ease 1.2s;
+  opacity: 0;
+  background-position: 3.88rem 0;
+}
+
+.item3 .article {
+  transition: all .3s ease 1.2s;
+  opacity: 0;
+  transform: translate(-0.2rem);
 }
 
 .animate .item1 {
-  background-position: 2.92rem 0.28rem;
+  background-position: 2.62rem 0.28rem;
+  opacity: 1;
+}
+
+.animate .item1 .article {
+  transform: translate(0);
+  opacity: 1;
 }
 
 .animate .item2 {
-  transition: all .5s ease 3s;
   background-position: -0.42rem 0.33rem;
+  opacity: 1;
+}
+
+.animate .item2 .article {
+  transform: translate(0);
+  opacity: 1;
 }
 
 .animate .item3 {
-  transition: all .5s ease 3s;
   background-position: 3.68rem 0;
+  opacity: 1;
+}
+
+.animate .item3 .article {
+  transform: translate(0);
+  opacity: 1;
 }
 
 .animate .step_3 {
