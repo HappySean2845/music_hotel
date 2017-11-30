@@ -1,3 +1,5 @@
+/*第一页动画*/
+
 .part_1 .article .note1 {
   opacity: 0;
   transition: all 1.5s ease 2s;
@@ -18,20 +20,6 @@
 
 .animate .article .note {
   opacity: 1;
-}
-
-.part_1 .step_1 p{
-  transition-property: opacity,transform;
-}
-
-.part_1 .step_2 p{
-  transition: all 1.5s ease 3s;
-  transition-property: opacity,transform;
-}
-
-.part_1 .step_3 p{
-  transition: all 1.5s ease 5s;
-  transition-property: opacity,transform;
 }
 
 .part_1 .step_1 .p1 {
@@ -61,7 +49,7 @@
 .part_1 .step_1 .p5 {
   opacity: 0;
   transform: translateY(0.2rem);
-  transition: all .5s ease 2.5s;
+  transition: all .5s ease 3s;
 }
 
 
@@ -185,11 +173,11 @@
 }
 
 .opacity_light2 {
-  animation: opacity_note 1.5s linear 4.5s infinite alternate;
+  animation: opacity_note 1.5s linear 5s infinite alternate;
 }
 
 .opacity_light3 {
-  animation: opacity_note 1.5s linear 5s infinite alternate;
+  animation: opacity_note 1.5s linear 6s infinite alternate;
 }
 
 @keyframes opacity_note {
@@ -203,6 +191,8 @@
     opacity: 1;
   }
 }
+
+/*第二页动画*/
 
 .item1 {
   transition: all .3s ease 0.8s;
@@ -270,6 +260,94 @@
   opacity: 1;
 }
 
-.animate .step_3 {
+/*第三页动画*/
 
+.part_3 .head_bg1 {
+  opacity: 0;
+  background-position: 1.5rem 0.2rem;
+  transition: all 1s;
+}
+
+.part_3 .head_bg2 {
+  opacity: 0;
+  background-position: -0.62rem 0.43rem;
+  transition: all 1s;
+}
+
+.part_3 .head_bg3 {
+  opacity: 0;
+  background-position: 3.8rem 0.55rem;
+  transition: all 1s;
+}
+
+.part_3 .theme_font {
+  opacity: 0;
+  transition: all 1s ease 1s;
+  transition-property: opacity;
+}
+
+.part_3 .theme_p .p1{
+  transform: translateY(0.2rem);
+  opacity: 0;
+  transition: all .5s ease 2s;
+  transition-property: opacity,transform;
+}
+
+.part_3 .theme_p .p2{
+  transform: translateY(0.2rem);
+  opacity: 0;
+  transition: all .5s ease 2.5s;
+  transition-property: opacity,transform;
+}
+
+.part_3 .theme_p .p3{
+  transform: translateY(0.2rem);
+  opacity: 0;
+  transition: all 0.5s ease 3s;
+  transition-property: opacity,transform;
+}
+
+.part_3 .touch {
+  opacity: 0;
+  transition: all 1s ease 4s;
+  transition-property: opacity;
+}
+
+.animate .head_bg1 {
+  opacity: 1;
+  background-position: 1.3rem 0.2rem;
+}
+
+.animate .head_bg2 {
+  opacity: 1;
+  background-position: -0.42rem 0.43rem;
+  transition: all .5s;
+}
+
+.animate .head_bg3 {
+  opacity: 1;
+  background-position: 3.6rem 0.55rem;
+}
+
+.animate .theme_font{
+  opacity: 1;
+}
+
+.animate .theme_p .p1{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate .theme_p .p2{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate .theme_p .p3{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate .touch {
+  opacity: 1
 }
