@@ -18,7 +18,7 @@ html, body {
        url(webfont.woff),
        url(webfont.eot) ;
 }
-
+iframe{width:7.5rem;}
 .content, .part {
   width: 100%;
   height: 100%;
@@ -469,4 +469,8 @@ html, body {
   vertical-align: top;
   background-image: url(../img/p3_lack.png);
   background-size: 100%;
+}
+canvas{
+  width:7.5rem;
+  height:7.5rem;
 }
