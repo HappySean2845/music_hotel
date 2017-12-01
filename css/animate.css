@@ -173,7 +173,7 @@
 }
 
 .scale_btn3 {
-  animation: scale_btn3 1.5s linear 5.3s infinite;
+  animation: scale_btn3 1.5s linear 5.5s infinite;
 }
 
 @keyframes scale_btn3 {
@@ -293,7 +293,7 @@
 
 /*第三页动画*/
 
-.part_3 .head_bg1 {
+/*.part_3 .head_bg1 {
   opacity: 0;
   background-position: 1.5rem 0.2rem;
   transition: all 1s;
@@ -309,7 +309,7 @@
   opacity: 0;
   background-position: 3.8rem 0.55rem;
   transition: all 1s;
-}
+}*/
 
 .part_3 .theme_font {
   opacity: 0;
@@ -342,22 +342,6 @@
   opacity: 0;
   transition: all 1s ease 4s;
   transition-property: opacity;
-}
-
-.animate .head_bg1 {
-  opacity: 1;
-  background-position: 1.3rem 0.2rem;
-}
-
-.animate .head_bg2 {
-  opacity: 1;
-  background-position: -0.42rem 0.43rem;
-  transition: all .5s;
-}
-
-.animate .head_bg3 {
-  opacity: 1;
-  background-position: 3.6rem 0.55rem;
 }
 
 .animate .theme_font{

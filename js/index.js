@@ -1,7 +1,8 @@
 $(function() {
 	var p1_btn = document.getElementById("p1_btn");
-	var dis_tim = 2000;
+	var dis_tim = 1000;
 	var timeout = undefined;
+	createParallax();
 	//长按屏幕
 	var sTime = 0;
 	var eTime = 0;
@@ -12,6 +13,7 @@ $(function() {
 			flag = true;
 			togglePage2();
 		}, dis_tim);
+		event.preventDefault();
 	}, false);
 
 	p1_btn.addEventListener('touchmove', function(event) {
@@ -19,9 +21,10 @@ $(function() {
 	});
 
 	p1_btn.addEventListener('touchend', function(event) {
+		event.preventDefault();
 		eTime = new Date().getTime();
 
-		if(eTime - sTime > dis_tim && !flag){
+		if(eTime - sTime >= dis_tim && !flag){
 			togglePage2()
 		}else {
 			console.log('长按');
@@ -59,6 +62,21 @@ $(function() {
 		$('.part_3').addClass('animate');
 		$($('.part_3 .head_bg')[t]).removeClass('hide');
 		addKeyTouchFun();
+	}
+
+	function createParallax(){
+		var scene_1 = $('.layer1').get(0);
+	  var parallax = new Parallax(scene_1, {
+	    pointerEvents: true,
+	  });
+	  var scene_2 = $('.layer2').get(0);
+	  var parallax = new Parallax(scene_2, {
+	    pointerEvents: true,
+	  });
+	  var scene_3 = $('.layer3').get(0);
+	  var parallax = new Parallax(scene_3, {
+	    pointerEvents: true,
+	  });
 	}
 
 	function addKeyTouchFun(){
