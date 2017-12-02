@@ -1,0 +1,241 @@
+/*留资信息页*/
+*{
+  margin:0;
+  padding: 0;
+}
+#infoContainer{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+  background: url("../img/darre/darre_info.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+#infoContainer .info_thing{
+  position: absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background: url("../img/darre/info_thing.png") no-repeat;
+  background-size: 100% 100%;
+}
+#infoContainer .info_thing .music_icon{
+  width: 0.42rem;
+  height: 1.15rem;
+  position: absolute;
+  left: 1.43rem;
+  top:0.52rem;
+}
+#infoContainer .info_thing .music_icon img{
+  width:100%;
+}
+#infoContainer .info_thing .info_title{
+  width: 6.04rem;
+  height: 1.16rem;
+  /*position: absolute;*/
+  margin:0 auto;
+  margin-top: 1.38rem;
+}
+
+
+#infoContainer .info_thing .btn_confirm{
+  width: 6.21rem;
+  height: 1.15rem;
+  margin:0 auto;
+  margin-top: 0.86rem;
+}
+#infoContainer .info_thing .btn_confirm img{
+  width:100%;
+}
+#infoContainer .info_thing .btn_gobang{
+  width: 3.62rem;
+  height: 0.28rem;
+  margin:0 auto;
+  margin-top: 0.24rem;
+  line-height:0;
+}
+#infoContainer .info_thing .btn_gobang img{
+  width:100%;
+}
+#infoContainer .info_thing .btn_cancel{
+  width: 6.24rem;
+  height: 0.75rem;
+  margin:0 auto;
+  margin-top: 0.24rem;
+  line-height:0;
+}
+#infoContainer .info_thing .btn_cancel img{
+  width:100%;
+}
+
+#infoContainer .info_thing .info_title img{
+  width: 100%;
+}
+#infoContainer .info_thing .info_small_title{
+  width: 3.44rem;
+  margin:0 auto;
+  margin-top: 0.2rem;
+}
+#infoContainer .info_thing .info_small_title img{
+  width:100%;
+}
+#infoContainer .info_thing .info_msg{
+  width:3.89rem;
+  height: 1.23rem;
+  margin:0 auto;
+  margin-top: 0.5rem;
+}
+#infoContainer .info_thing .info_msg img{
+  width:100%;
+}
+#infoContainer .info_thing  .darre_form{
+  width:100%;
+  margin-top: 0.64rem;
+}
+#infoContainer .info_thing  .darre_form ul{
+  width:100%;
+}
+#infoContainer .info_thing  .darre_form ul li{
+  height: 0.7rem;
+  line-height: 0rem;
+}
+#infoContainer .info_thing  .darre_form ul li .left{
+  float: left;
+  width:1.27rem;
+  height: 0.7rem;
+  margin-left: 0.69rem;
+}
+#infoContainer .info_thing  .darre_form ul li .left img{
+  width:100%;
+  padding-top:0.2rem;
+}
+#infoContainer .info_thing  .darre_form ul li .right {
+  float: right;
+  width: 4.57rem;
+  height: 0.7rem;
+  margin-right: 0.72rem;
+}
+#infoContainer .info_thing  .darre_form ul li .right .darre_input{
+  width: 4.57rem;
+  height: 0.7rem;
+  background: url("../img/darre/info_input_03.jpg") no-repeat;
+  background-size: 100% 100%;
+  border-width: 0;
+  line-height: 0.7rem;
+  color: #ffffff;
+}
+#infoContainer .info_thing  .darre_form ul li .right .darre_input:focus{
+  outline: none;
+}
+
+#infoContainer .info_thing  .darre_form ul li .right img{
+  width:100%;
+}
+
+/*top6排行榜界面*/
+#topContainer{
+  width:100%;
+  height: 100%;
+  position: absolute;
+  left:0;
+  top:0;
+  background: url("../img/darre/darre_bg.jpg") no-repeat;
+  line-height:0;
+  background-size:100% 100%;
+}
+#topContainer .music_icon{
+  width:100%;
+  height:100%;
+  position: absolute;
+  left:0;
+  top:0;
+  background: url("../img/darre/darre_music_icon.png") no-repeat;
+  background-size:100% 100%;
+}
+#topContainer .music_icon .logo{
+  width: 2.77rem;
+  height: 0.34rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -1.38rem;
+  top: 0.64rem;
+}
+#topContainer .music_icon .logo img{
+  width:100%;
+}
+#topContainer .music_icon .darreImg{
+  width: 5.92rem;
+  height: 2.23rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -2.96rem;
+  top: 1.22rem;
+}
+#topContainer .music_icon .darreImg img{
+  width:100%;
+}
+#topContainer .music_icon .desc{
+  width: 5.2rem;
+  height: 0.35rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -2.6rem;
+  top: 3.46rem;
+}
+#topContainer .music_icon .desc img{
+  width:100%;
+}
+#topContainer .music_icon .top6{
+  width: 1.43rem;
+  height: 0.22rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -0.72rem;
+  top:4.1rem;
+}
+#topContainer .music_icon .top6 img{
+  width: 100%;
+}
+.music_icon .darre_icon_1 img{
+  width:100%;
+}
+.music_icon .darre_icon_1{
+  width:2.04rem;
+  height: 1.26rem;
+  position: absolute;
+  left: 1.38rem;
+  top: 4.68rem;
+}
+.music_icon .darre_icon_2 img{
+  width:100%;
+}
+.music_icon .darre_icon_2{
+  width:1.98rem;
+  height: 1.24rem;
+  position: absolute;
+  right: 1.64em;
+  top: 4.75rem;
+}
+#topContainer .music_icon .add{
+  position: absolute;
+  width: 0.16rem;
+  height: 0.16rem;
+  left: 3.54rem;
+  top:4.96rem;
+}
+#topContainer .music_icon .add img{
+  width:100%;
+}
+
+#topContainer .music_icon .top_list{
+  width:100%;
+}
+
+
+
+
+
+
+

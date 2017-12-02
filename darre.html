@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+	<meta charset='utf-8'>
+	<meta name="description" content="华住音乐酒店"/>
+   	<meta name="keywords" content="华住音乐酒店"/>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <meta name="msapplication-tap-highlight" content="no">
+	<title>华住</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/darre.css">
+</head>
+<body>
+	<div id="topContainer">
+        <div class="music_icon">
+            <div class="logo"><img src="img/darre/darre_logo_03.png" alt=""></div>
+            <div class="darreImg"><img src="img/darre/darre_img_03.png" alt=""></div>
+            <div class="desc"><img src="img/darre/darre_desc_07.png" alt=""></div>
+            <div class="top6"><img src="img/darre/darre_top6_11.png" alt=""></div>
+            <div class="add"><img src="img/darre/darre_add_14.png"></div>
+            <div class="darre_icon_1"><img src="img/darre/darre_icon_1_03.png" alt=""></div>
+            <div class="darre_icon_2"><img src="img/darre/darre_icon_2_06.png" alt=""></div>
+
+
+
+
+
+            <div class="top_list">
+                <ul>
+                    <li>
+                        <span class="icon"><img src="img/darre/darre_music_name_19.png" alt="">
+                        </span><span>唱片名
+                        </span><span class="star"><img src="img/darre/darre_star" alt="">
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+
+
+        </div>
+	</div>
+	<script type="text/javascript">
+		(function (doc, win) {
+        	var docEl = doc.documentElement,
+            size = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=750){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                }
+            };
+        if (!doc.addEventListener) return;
+        win.addEventListener('resize', size, false);
+        doc.addEventListener('DOMContentLoaded', size, false);
+    })(document, window);
+	</script>
+	<script type="text/javascript" src="js/darre.js"></script>
+</body>
+</html>
