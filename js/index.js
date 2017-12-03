@@ -83,14 +83,17 @@ $(function() {
 		var key = document.getElementById("key");
 		var max_length = 4;
 		var dis_touch = '';
+		var st_pos = 0;
 		key.addEventListener('touchstart', function(event){
 			console.log('开始拖动', event);
+			st_pos = parseInt(event.targetTouches[0].pageX);
 		});
 
 		key.addEventListener('touchmove', function(event){
 			event.preventDefault();
 			console.log('滑动继续');
-			dis_touch = event.targetTouches[0].pageX / 100;
+			dis_touch = pxToRem(event.targetTouches[0].pageX - st_pos);
+
 			if(dis_touch > max_length) {
 				dis_touch = max_length;
 			}
