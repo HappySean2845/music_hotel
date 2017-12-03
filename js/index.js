@@ -65,65 +65,17 @@ $(function() {
     addKeyTouchFun();
   }
 
-<<<<<<< Updated upstream
-	function createParallax(){
-		var scene_1 = $('.layer_1').get(0);
-	  var parallax = new Parallax(scene_1, {
-	    pointerEvents: true,
-	  });
-	  var scene_2 = $('.layer_2').get(0);
-	  var parallax = new Parallax(scene_2, {
-	    pointerEvents: true,
-	  });
-	  var scene_3 = $('.layer_3').get(0);
-	  var parallax = new Parallax(scene_3, {
-	    pointerEvents: true,
-	  });
-	}
 
-	function addKeyTouchFun(){
-		var key = document.getElementById("key");
-		var max_length = 4;
-		var dis_touch = '';
-		var st_pos = 0;
-		key.addEventListener('touchstart', function(event){
-			console.log('开始拖动', event);
-			st_pos = parseInt(event.targetTouches[0].pageX);
-		});
-
-		key.addEventListener('touchmove', function(event){
-			event.preventDefault();
-			console.log('滑动继续');
-			dis_touch = pxToRem(event.targetTouches[0].pageX - st_pos);
-
-			if(dis_touch > max_length) {
-				dis_touch = max_length;
-			}
-			$(key).css('transition', 'none').css('transform', 'translateX(' + dis_touch + 'rem');
-		});
-
-		key.addEventListener('touchend', function(event){
-			console.log('停止滑动', event);
-			var dis_touch = event.changedTouches[0].pageX / 100;
-			if(dis_touch < max_length) {
-				dis_touch = 0;
-				$(key).css('transition', 'all 0.5s').css('transform', 'translateX(' + dis_touch + 'rem');
-			}else {
-				//过度页
-			}
-		});
-	}
-=======
   function createParallax(){
-    var scene_1 = $('.layer1').get(0);
+    var scene_1 = $('.layer_1').get(0);
     var parallax = new Parallax(scene_1, {
       pointerEvents: true,
     });
-    var scene_2 = $('.layer2').get(0);
+    var scene_2 = $('.layer_2').get(0);
     var parallax = new Parallax(scene_2, {
       pointerEvents: true,
     });
-    var scene_3 = $('.layer3').get(0);
+    var scene_3 = $('.layer_3').get(0);
     var parallax = new Parallax(scene_3, {
       pointerEvents: true,
     });
@@ -133,20 +85,22 @@ $(function() {
     var key = document.getElementById("key");
     var max_length = 4;
     var dis_touch = '';
+    var st_pos = 0;
     key.addEventListener('touchstart', function(event){
       console.log('开始拖动', event);
+      st_pos = parseInt(event.targetTouches[0].pageX);
     });
 
     key.addEventListener('touchmove', function(event){
       event.preventDefault();
       console.log('滑动继续');
-      dis_touch = event.targetTouches[0].pageX / 100;
+      dis_touch = pxToRem(event.targetTouches[0].pageX - st_pos);
+
       if(dis_touch > max_length) {
         dis_touch = max_length;
       }
       $(key).css('transition', 'none').css('transform', 'translateX(' + dis_touch + 'rem');
     });
->>>>>>> Stashed changes
 
     key.addEventListener('touchend', function(event){
       console.log('停止滑动', event);
@@ -159,7 +113,6 @@ $(function() {
       }
     });
   }
-
   //登录
   var code = $_GET('code');
   console.log('code:',code);
