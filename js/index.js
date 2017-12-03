@@ -105,18 +105,28 @@ $(function() {
     key.addEventListener('touchend', function(event){
       console.log('停止滑动', event);
       var dis_touch = event.changedTouches[0].pageX / 100;
-      if(dis_touch < max_length) {
+      if(dis_touch < max_length-10) {
         dis_touch = 0;
         $(key).css('transition', 'all 0.5s').css('transform', 'translateX(' + dis_touch + 'rem');
       }else {
-        //过度页
+        //上传照片
+          changePic();
       }
     });
   }
+  var iframe = getXiamiPlayer();
+  $('.btn_group').after(iframe);
   //登录
   var code = $_GET('code');
   console.log('code:',code);
-  login(code,function(data){
-    console.log(data)
+  if(!localStorage.id||localStorage.id=='undefined'){
+    login(code,function(data){
+      console.log(data)
+    })
+  }
+  $('.submit').click(function(){
+    uploadImage(localStorage.id,img_base64,function(data){
+
+    })
   })
 });

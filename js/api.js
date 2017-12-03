@@ -35,11 +35,42 @@ function login(code,successCB){
       timestamp : timestamp,
       sign      : sign
     },
+    dataType : 'json',
     success : function(data){
-      localStorage.id = data.id
-      successCB(data);
+      if(data.status=='success'){
+        localStorage.id = data.user.id
+        successCB(data);
+      }else{
+        window.location.href = Config.LOGIN_URL;
+      }
     }
   })
+}
+//上传照片 img:base64
+function uploadImage(id,image,successCB){
+  var timestamp = Math.floor(new Date().getTime()/1000);
+  var sign = md5(id.toString()+timestamp.toString()+Config.SIGN_KEY);
+  $.ajax({
+    url : Config.API_URL+'upload_image.php',
+    type : 'POST',
+    data : {
+      id           : id,
+      image        : image,
+      timestamp    : timestamp,
+      sign         : sign,
+    },
+    dataType : 'json',
+    success : function(data){
+      console.log('上传照片返回',data);
+      if(data.status=='success'){
+        alert('图片上传成功!')
+        successCB(data);
+      }else{
+        alert('上传失败，请稍后再试');
+      }
+    }
+  })
+
 }
 //完善用户信息
 //id是login接口返回的id
@@ -47,7 +78,7 @@ function login(code,successCB){
 //sobg_list 数组？待定
 function complete_user(id,image,name,record_name,song_list,mobile,successCB){
   var timestamp = Math.floor(new Date().getTime()/1000);
-  var sign = md5(id+timestamp+Config.SIGN_KEY);
+  var sign = md5(id.toString()+timestamp.toString()+Config.SIGN_KEY);
   if(!validate.isEmpty(name)){
     alert('请填写姓名');
     return;
@@ -112,6 +143,43 @@ function follow(id,follow_id,successCB){
     },
     success : function(data){
       console.log('完善用户信息返回',data);
+      successCB(data);
+    }
+  })
+}
+//查看排行榜 id是当前用户id
+function getRank(id){
+  var timestamp = Math.floor(new Date().getTime()/1000);
+  var sign = md5(id.toString()+timestamp.toString()+Config.SIGN_KEY);
+  $.ajax({
+    url : Config.API_URL+'rank.php',
+    type : 'GET',
+    data : {
+      id           : id,
+      timestamp    : timestamp,
+      sign         : sign,
+    },
+    success : function(data){
+      console.log('获取排行榜返回',data);
+      successCB(data);
+    }
+  })
+}
+//查看单个用户详情
+function getDetail(id,detail_id){
+  var timestamp = Math.floor(new Date().getTime()/1000);
+  var sign = md5(id.toString()+detail_id.toString()+timestamp.toString()+Config.SIGN_KEY);
+  $.ajax({
+    url : Config.API_URL+'detail.php',
+    type : 'GET',
+    data : {
+      id           : id,
+      check_id     : detail_id,
+      timestamp    : timestamp,
+      sign         : sign,
+    },
+    success : function(data){
+      console.log('查看个人歌单详情返回',data);
       successCB(data);
     }
   })

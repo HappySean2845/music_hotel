@@ -165,7 +165,7 @@
   75% {
     transform: scale(1);
     opacity: 0.8;
-  }  
+  }
   100% {
     transform: scale(1.16);
     opacity: 0;
@@ -192,7 +192,7 @@
   75% {
     transform: scale(1);
     opacity: 0.8;
-  }  
+  }
   100% {
     transform: scale(1.1);
     opacity: 0;
@@ -281,7 +281,7 @@
 .item2 .article {
   transition: all 1s ease 1s;
   opacity: 0;
-  transform: translate(0.5rem);  
+  transform: translate(0.5rem);
 }
 
 .item3 {
@@ -381,5 +381,6 @@
 }
 
 .animate .touch {
-  opacity: 1
+  opacity: 1;
+  z-index:2;
 }

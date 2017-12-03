@@ -1,3 +1,4 @@
+var img_base64 = '';
 var pc = new PhotoClip('.view', {
   size: [document.documentElement.clientWidth,document.documentElement.clientHeight],
   outputSize: document.documentElement.clientWidth,
@@ -8,6 +9,7 @@ var pc = new PhotoClip('.view', {
   //img: 'img/mm.jpg',
   loadStart: function() {
     console.log('开始读取照片');
+    $('.part_3').hide();
     $('.poster').hide();
     $('.clip').fadeIn(800);
     $('.html2canvas').show();
@@ -24,7 +26,8 @@ var pc = new PhotoClip('.view', {
         onrendered: function(canvas) {
           $('.html2canvas').hide();
           // $('.layer').after(canvas);
-          $('.final').attr('src',canvas.toDataURL());
+          img_base64 = canvas.toDataURL("image/jpeg", 1);
+          $('.final').attr('src',img_base64);
         },
         // logging : true,
       });

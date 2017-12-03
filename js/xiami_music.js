@@ -1,3 +1,4 @@
+var user_given_music_list = '';
 var music_list = [];
 music_list[0] = ['1795766385','3351083','1770681782','1792702528','2088672','1772207340','2074443','2069506','1792568095','1773758974','1772872496',
 '1770488614','1771512771','376165','2072378','2095209','1773443324','1771547251','1769744669','1771805701','1229766','1769629171','1769532305','3381911','1792568097'];
@@ -23,6 +24,6 @@ function getXiamiPlayer(){
   iframe.src         = music_url;
   iframe.frameBorder ="no";
   console.log(iframe)
-  $('.xiami').html(iframe)
+  user_given_music_list = list_id+','+music_id;         //用于接口传
+  return iframe;
 }
-getXiamiPlayer();
