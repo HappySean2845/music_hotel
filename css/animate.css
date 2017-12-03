@@ -146,7 +146,7 @@
 }
 
 .scale_btn2 {
-  animation: scale_btn2 1s linear 7s infinite;
+  animation: scale_btn2 1.5s linear 7s infinite;
 }
 
 @keyframes scale_btn2 {
@@ -173,7 +173,7 @@
 }
 
 .scale_btn3 {
-  animation: scale_btn3 1s linear 7.8s infinite;
+  animation: scale_btn3 1.5s linear 8s infinite;
 }
 
 @keyframes scale_btn3 {
@@ -220,6 +220,49 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+.amt_bg1 {
+  animation: amt_bg 4s linear 1.5s infinite;
+}
+
+.amt_bg2 {
+  animation: amt_bg 5s linear 2.5s infinite;
+}
+
+.amt_bg3 {
+  animation: amt_bg 6s linear 3.5s infinite;
+}
+
+@keyframes amt_bg {
+  0% { 
+    background-position: -400% 0; 
+    opacity: 0;
+  }
+  15% { 
+    background-position: -300% 0;
+    opacity: 0.5;
+  }
+  35% { 
+    background-position: -200% 0; 
+    opacity: 1;
+  }
+  50% { 
+    background-position: -100% 0; 
+    opacity: 1;
+  }
+  75% {
+    background-position: 0% 0; 
+    opacity: 1;
+  }
+  90% {
+    background-position: 100% 0; 
+    opacity: 1;
+  }
+  100% { 
+    background-position: 200% 0; 
+    opacity: 0.5;
   }
 }
 
