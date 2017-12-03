@@ -65,15 +65,15 @@ $(function() {
 	}
 
 	function createParallax(){
-		var scene_1 = $('.layer1').get(0);
+		var scene_1 = $('.layer_1').get(0);
 	  var parallax = new Parallax(scene_1, {
 	    pointerEvents: true,
 	  });
-	  var scene_2 = $('.layer2').get(0);
+	  var scene_2 = $('.layer_2').get(0);
 	  var parallax = new Parallax(scene_2, {
 	    pointerEvents: true,
 	  });
-	  var scene_3 = $('.layer3').get(0);
+	  var scene_3 = $('.layer_3').get(0);
 	  var parallax = new Parallax(scene_3, {
 	    pointerEvents: true,
 	  });

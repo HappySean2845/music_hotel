@@ -8,13 +8,13 @@
 
 .part_1 .article .opacity_note2 {
   opacity: 0;
-  transition: all 1.5s ease 3s;
+  transition: all 1.5s ease 2.5s;
   transition-property: opacity;
 }
 
 .part_1 .article .opacity_note3 {
   opacity: 0;
-  transition: all 1.5s ease 5.5s;
+  transition: all 1.5s ease 4s;
   transition-property: opacity;
 }
 
@@ -167,7 +167,7 @@
     opacity: 0.8;
   }  
   100% {
-    transform: scale(1.1);
+    transform: scale(1.16);
     opacity: 0;
   }
 }
@@ -204,11 +204,11 @@
 }
 
 .opacity_light2 {
-  animation: opacity_note 1.5s linear 6.5s infinite alternate;
+  animation: opacity_note 1.5s linear 6s infinite alternate;
 }
 
 .opacity_light3 {
-  animation: opacity_note 1.5s linear 9.5s infinite alternate;
+  animation: opacity_note 1.5s linear 7.5s infinite alternate;
 }
 
 @keyframes opacity_note {
