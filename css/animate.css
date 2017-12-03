@@ -236,33 +236,25 @@
 }
 
 @keyframes amt_bg {
-  0% { 
-    background-position: -400% 0; 
+  0% {
     opacity: 0;
+    transform: translateX(6rem);
   }
-  15% { 
-    background-position: -300% 0;
-    opacity: 0.5;
-  }
-  35% { 
-    background-position: -200% 0; 
+  10% {
     opacity: 1;
+    transform: translateX(5rem);
   }
-  50% { 
-    background-position: -100% 0; 
+  50% {
     opacity: 1;
+    transform: translateX(0rem);
   }
-  75% {
-    background-position: 0% 0; 
+  95% {
     opacity: 1;
+    transform: translateX(-5rem);
   }
-  90% {
-    background-position: 100% 0; 
-    opacity: 1;
-  }
-  100% { 
-    background-position: 200% 0; 
-    opacity: 0.5;
+  100% {
+    opacity: 0;
+    transform: translateX(-6rem);
   }
 }
 
