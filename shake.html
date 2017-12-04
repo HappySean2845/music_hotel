@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>摇一摇</title>
+	<link rel="stylesheet" type="text/css" href="css/shake.css">
+</head>
+<body>
+	<div class="shake_page">
+		
+	</div>
+<script type="text/javascript">
+	$(function(){
+		if (window.DeviceMotionEvent) {
+    	window.addEventListener('devicemotion', shakeEventHandler, false);
+		} else {
+		  alert('客官，您需要一个新手机');
+		}
+
+		var threshold = 25;  //阀值
+		var preX = preY = preZ = x = y = z = 0;
+		var preTime = 0;
+
+		function shakeEventHandler(event) {
+   		var acceleration = event.accelerationIncludingGravity;
+   		var curTime = new Date().getTime();
+   		var diffTime = curTime-preTime;
+
+   		if (diffTime > 100) {
+        preTime = curTime;
+        x = acceleration.x;
+        y = acceleration.y;
+        z = acceleration.z;
+
+        var accelerationDiff = Math.abs(x + y + z - preX - preY - preZ) / diffTime * 10000;
+        if (accelerationDiff > threshold) {
+          alert("摇一摇有惊喜！");
+        }
+        preX = x;
+        preY = y;
+        preZ = z;
+   	 	}
+		}
+	});
+</script>
+</body>
+</html>
