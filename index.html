@@ -24,7 +24,7 @@
 <body>
   <div id="container" class="content">
     <!-- 第一页 -->
-    <div class="part part_1 hide">
+    <div class="part part_1">
       <div class="article article1 step step_1">
         <p class="p1">穿梭在<span>车水马龙</span>的建筑丛林间，</p>
         <p class="p2">有没有那么<span>一瞬间</span>，</p>
@@ -163,21 +163,21 @@
 <!--   <div class="part xiami">
 
   </div> -->
-  <div class="part clip">
+  <div class="part clip hide">
     <input type="file" id="file">
     <div class="view"></div>
-    <div class="clipBtn">确认截取</div>
+    <div class="clipBtn"></div>
   </div>
   <div class="part poster hide">
     <div class="will_hide">
       <div class="title">长按图片保存歌单</div>
       <div class="html2canvas">
         <img class="bg" src="">
-        <img class="layer" src="img/layer/1.png">
+        <img class="layer" src="">
       </div>
       <div class="btn_group">
         <div class="btn change_bg" style="margin-left:0.72rem" onclick="changePic()">更换照片</div>
-        <div class="btn change_layer" style="margin-left:.3rem">调整态度</div>
+        <div class="btn change_layer" style="margin-left:.3rem" onclick="changeLayer()">调整态度</div>
         <div class="submit"></div>
       </div>
       <div class="hint"></div>

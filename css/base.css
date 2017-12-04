@@ -511,7 +511,7 @@ canvas{
 #file{
   position:absolute;
   z-index:2;
-  /*visibility: hidden;*/
+  visibility: hidden;
 }
 .view{
   position:absolute;
@@ -521,12 +521,13 @@ canvas{
 }
 .clipBtn{
   position:absolute;
+  background:url(../img/layer/clip.png ) center no-repeat;
+  background-size:100%;
   z-index:2;
-  bottom:2rem;
-  left:1rem;
-  background-color:#000;
+  bottom:1.2rem;
+  left:16%;
   font-size:0.2rem;color:#fff;
-  width:2rem; height:1rem;
+  width:5.16rem; height:.96rem;
 }
 .poster .title{
   position:absolute;
