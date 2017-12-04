@@ -19,6 +19,11 @@ html, body {
        url(webfont.woff),
        url(webfont.eot) ;
 }
+
+.content {
+  background-image: url(../img/p1_bg.jpg);
+}
+
 .content, .part {
   width: 100%;
   height: 100%;
