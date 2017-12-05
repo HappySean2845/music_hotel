@@ -105,10 +105,6 @@ function complete_user(id,image,name,record_name,song_list,mobile,successCB){
       }
     }
   }
-  if(!validate.isMobile(mobile)){
-    alert('请填写正确的手机');
-    return;
-  }
   $.ajax({
     url : Config.API_URL+'complete_user.php',
     type : 'POST',
@@ -116,7 +112,7 @@ function complete_user(id,image,name,record_name,song_list,mobile,successCB){
       id           : id,
       image        : image,
       name         : name,
-      recorde_name : recorde_name,
+      recorde_name : record_name,
       song_list    : song_list,
       mobile       : mobile,
       timestamp    : timestamp,
@@ -148,7 +144,7 @@ function follow(id,follow_id,successCB){
   })
 }
 //查看排行榜 id是当前用户id
-function getRank(id){
+function getRank(id,successCB){
   var timestamp = Math.floor(new Date().getTime()/1000);
   var sign = md5(id.toString()+timestamp.toString()+Config.SIGN_KEY);
   $.ajax({

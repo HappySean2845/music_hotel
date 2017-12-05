@@ -1,0 +1,140 @@
+.shake_page {
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*background: linear-gradient(to bottom, #251428, #080808);*/
+}
+
+.shake_part {
+	opacity: 1;
+	background-image: url(../img/shake/shake.jpg);
+}
+
+.shake_page .bg {
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.shake_page .line_bg{
+  background-image: url(../img/shake/line.png);
+}
+
+.shake_page .note_bg {
+  background-image: url(../img/shake/note.png);
+}
+
+.shake_page .pillow_bg {
+  background-image: url(../img/shake/pillow.png);
+}
+.shake_page .font {
+	position: absolute;
+	top: 1.36rem;
+	left: 1.2rem;
+	width: 5.11rem;
+	height: 1.22rem;
+	background-image: url(../img/shake/shake_font.png);
+}
+
+.shake_page .tip {
+	position: absolute;
+	top: 7.66rem;
+	left: 2.23rem;
+	width: 3.04rem;
+	height: 1.07rem;
+	background-image: url(../img/shake/shake_tip.png);
+}
+
+.shake_page .shake {
+	position: absolute;
+	top: inherit;
+	bottom: 1rem;
+	left: 3rem;
+	width: 1.55rem;
+	height: 1.58rem;
+	background-image: url(../img/shake/shake.png);
+}
+
+.shake_page .result_font {
+	position: absolute;
+	top: 0.3rem;
+	left: 1.85rem;
+	width: 3.8rem;
+	height: 1.54rem;
+	background-image: url(../img/shake/result_font.png);
+}
+
+.shake_page .volume {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/shake/volume.png);
+	transform: translateY(-0.3rem);
+}
+
+.shake_page .sheet {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/shake/sheet.png);
+	transform: translateY(-0.3rem);
+}
+
+.shake_page .btn {
+	position: absolute;
+	top: 9.1rem;
+	left: 1.87rem;
+	width: 4rem;
+	height: 0.76rem;
+	background-image: url(../img/shake/btn.png);
+}
+
+.shake_p2 .article {
+	position: absolute;
+	top: 4.28rem;
+	left: 0.25rem;
+	width: 100%;
+}
+
+.shake_p2 .article .tit {
+	display: block;
+	height: 0.38rem;
+	margin-bottom: 0.4rem;
+	text-align: center;
+}
+
+.shake_p2 .article em {
+	position: relative;
+	float: left;
+	margin-left: 3.4rem;
+	width: 0.33rem;
+	height: 0.38rem;
+	background-image: url(../img/shake/icon_note.png);
+}
+
+.shake_p2 .article em:before, .shake_p2 .article em:after {
+	content: '';
+	position: absolute;
+	top: 0.2rem;
+	width: 0.33rem;
+	height: 0.03rem;
+	background-color: #fff;
+}
+
+.shake_p2 .article em:before {
+	left: -0.5rem;
+}
+
+.shake_p2 .article em:after {
+	left: 0.5rem;
+}
+
+.shake_p2 .article p{
+  font-size: 0.36rem;
+  font-family: "SimHei";
+  color: #fff;
+  /*text-shadow: 0.05rem 0.1rem 0.01rem #000;*/
+}
+
+.shake_p2 .article p.mt {
+	margin-top: 0.75rem;
+}

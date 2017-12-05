@@ -384,3 +384,145 @@
   opacity: 1;
   z-index:2;
 }
+
+/*摇一摇*/
+.shake_p1 .font {
+  opacity: 0;
+  transition: all 1.5s ease 1s;
+  transform: translateY(1rem);
+}
+
+.shake_p1 .tip {
+  opacity: 0;
+  transition: all 1.5s ease 1.5s;
+  transform: translateY(1rem);
+}
+
+.shake_p1 .shake  {
+  opacity: 0;
+  transition: all 1.5s ease 2s;
+  transform: translateY(1rem);
+}
+
+.animate.shake_p1 .font {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate.shake_p1 .tip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate.shake_p1 .shake {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.shake_p2 .result_font {
+  opacity: 0;
+  transition: all 1.5s ease 1s;
+  transform: translateY(0.5rem);
+}
+
+.shake_p2 .volume {
+  opacity: 0;
+  transition: all 1s ease 1.5s;
+}
+
+.shake_p2 .sheet {
+  opacity: 0;
+  transition: all 1s ease 2s;
+  transform: translateY(0.5rem);
+}
+
+.shake_p2 .article .tit {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: all 1.5s ease 3s;
+}
+
+.shake_p2 .article .p1 {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: all 1.5s ease 3.5s;
+}
+
+.shake_p2 .article .p2 {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: all 1.5s ease 4s;
+}
+
+.shake_p2 .article .p3 {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: all 1.5s ease 4.5s;
+}
+
+.shake_p2 .article .p4 {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: all 1.5s ease 5.5s;
+}
+
+.shake_p2 .article .p5 {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: all 1.5s ease 6s;
+}
+
+
+.shake_p2 .btn {
+  opacity: 0;
+  transition: all 1s ease 6s;
+  transform: translateY(0.5rem);
+}
+
+.animate.shake_p2 .result_font {
+  opacity: 1;
+}
+
+.animate.shake_p2 .volume {
+  opacity: 1;
+}
+
+.animate.shake_p2 .sheet {
+  opacity: 1;
+}
+
+.animate.shake_p2 .article .tit { 
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate.shake_p2 .article .p1 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate.shake_p2 .article .p2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate.shake_p2 .article .p3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate.shake_p2 .article .p4 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate.shake_p2 .article .p5 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate.shake_p2 .btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+

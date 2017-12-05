@@ -24,16 +24,13 @@ $(function() {
   p1_btn.addEventListener('touchend', function(event) {
     event.preventDefault();
     eTime = new Date().getTime();
-
     if(eTime - sTime >= dis_tim && !flag){
       togglePage2()
     }else {
       console.log('长按');
       clearTimeout(timeout);
     }
-
   });
-
   function togglePage2(){
     $('.part_1').removeClass('animate');
     $('.part_1').fadeOut(500);
@@ -44,6 +41,8 @@ $(function() {
   setTimeout(function() {
     $(".part_1").addClass("animate");
   }, 500);
+
+
 
   var p2_note = document.querySelector('.part_2').querySelectorAll('.note');
   for(var i = 0; i < 3; i++){
@@ -126,7 +125,99 @@ $(function() {
   }
   $('.submit').click(function(){
     uploadImage(localStorage.id,img_base64,function(data){
-
+      console.log("进入留资页面");
+      $(".poster").fadeOut(500);
+      $("#infoContainer").fadeIn(500);
     })
   })
+  $("#infoContainer .btn_confirm").click(function(){
+    complete_user(localStorage.id,window.img_base64,$("#name").val(),$("#record_name").val(),window.user_given_music_list,$("#mobile").val(),function(){
+      alert("留资成功");   //跳转到排行榜界面
+      $("#infoContainer").fadeOut(500);
+      $("#topContainer").fadeIn(500);
+      getRank(localStorage.id,function(o){
+        // if(o&&o.length>=1){
+        console.log('list',o);
+          var inner = "";
+        var d = JSON.parse(o)["list"];
+        if(!d) return;
+        for(var i = 0;i<d.length;i++){
+            var eachLine = '<li>' +
+              '<span class="icon"><img src="img/darre/darre_music_name_19.png" alt=""></span>' +
+              '<span class="record_name">'+d[i].record_name+' </span>' +
+              '<span class="star"><img src="img/darre/darre_music_star_22.png" alt="">'+d[i].follow+' </span>' +
+              '<span class="play"><img src="img/darre/darre_music_play_19.png" alt=""></span></li>';
+            inner = inner + eachLine;
+          }
+        $(".top_list ul").html(inner);
+      });
+    })
+  })
+  $("#topContainer .how").click(function(){
+    console.log("出玩法提示");
+    $("#topContainer .help").fadeIn(500);
+  })
+  $("#topContainer .help").click(function(){
+    console.log("移除玩法提示");
+    $("#topContainer .help").fadeOut(500);
+  })
+
+  // 切摇一摇页面 
+  // 添加此方法即可
+  function toggleShakePage1(){
+    $('.shake_page').fadeIn(500);
+    $(".shake_page .shake_p1").addClass("animate");
+    setTimeout(function(){
+      $(".shake_page").addClass("shake_part");
+    }, 1000);
+    shake();
+  }
+
+  // 摇一摇
+  function shake(){
+    if (window.DeviceMotionEvent) {
+      window.addEventListener('devicemotion', shakeEventHandler, false);
+    } else {
+      alert('客官，您需要一个新手机');
+    }
+
+    var threshold = 4000;  //阀值
+    var preX = preY = preZ = x = y = z = 0;
+    var preTime = 0;
+
+    function shakeEventHandler(event) {
+      var acceleration = event.accelerationIncludingGravity;
+      var curTime = new Date().getTime();
+      var diffTime = curTime-preTime;
+
+      if (diffTime > 100) {
+        preTime = curTime;
+        x = acceleration.x;
+        y = acceleration.y;
+        z = acceleration.z;
+
+        var accelerationDiff = Math.abs(x + y + z - preX - preY - preZ) / diffTime * 10000;
+        if (accelerationDiff > threshold) {
+          // alert("摇一摇有惊喜！");
+          toggleShakePage2();
+        }
+        preX = x;
+        preY = y;
+        preZ = z;
+      }
+    }
+  }
+
+  function toggleShakePage2(){
+    $('.shake_page').removeClass('shake_part');
+    $('.shake_page .shake_p1').removeClass('animate');
+    $('.shake_page .shake_p1').fadeOut(500);
+    $('.shake_page .shake_p2').fadeIn(500);
+    $('.shake_page .shake_p2').addClass('animate');
+  }
+
+  $('#shake_btn').on('click', function(){
+    alert('上传图片');
+  })
+
 });

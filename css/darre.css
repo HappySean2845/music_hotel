@@ -100,6 +100,7 @@
 #infoContainer .info_thing  .darre_form ul li{
   height: 0.7rem;
   line-height: 0rem;
+  list-style: none;
 }
 #infoContainer .info_thing  .darre_form ul li .left{
   float: left;
@@ -118,7 +119,8 @@
   margin-right: 0.72rem;
 }
 #infoContainer .info_thing  .darre_form ul li .right .darre_input{
-  width: 4.57rem;
+  padding-left: 0.17rem;
+  width: 4.4rem;
   height: 0.7rem;
   background: url("../img/darre/info_input_03.jpg") no-repeat;
   background-size: 100% 100%;
@@ -145,6 +147,32 @@
   line-height:0;
   background-size:100% 100%;
 }
+
+#topContainer  .darre_btn_1{
+  width:6.22rem;
+  height:1.15rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -3.11rem;
+  bottom: 2.3rem;
+}
+#topContainer  .darre_btn_1 img{
+  width:100%;
+}
+#topContainer  .darre_btn_2{
+  width:6.22rem;
+  height:1.15rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -3.11rem;
+  bottom: 0.75rem;
+}
+#topContainer  .darre_btn_2 img{
+  width:100%;
+}
+
+
+
 #topContainer .music_icon{
   width:100%;
   height:100%;
@@ -225,17 +253,178 @@
   left: 3.54rem;
   top:4.96rem;
 }
+#topContainer .help{
+  position: absolute;
+  width:100%;
+  height:100%;
+  left: 0;
+  top:0;
+  background: url("../img/darre/darre_htlp.png");
+  background-size:100% 100%;
+}
+#topContainer .music_icon .how{
+  position: absolute;
+  width: 0.61rem;
+  height: 0.22rem;
+  right: 0.65rem;
+  top:5.38rem;
+}
+#topContainer .music_icon .how img{
+  width:100%;
+  right: 0.65rem;
+  top: 5.4rem;
+}
 #topContainer .music_icon .add img{
   width:100%;
 }
 
 #topContainer .music_icon .top_list{
   width:100%;
+  color: #ffffff;
+  font-size: 0.3rem;
+  margin-top: 6rem;
+  height:3.2rem;
+  overflow-y: scroll;
+}
+#topContainer .music_icon .top_list ul li{
+  height: 0.62rem;
+  line-height: 0.62rem;
+  vertical-align: middle;
+  text-align: center;
+  margin-top: 0.16rem;
+}
+#topContainer .music_icon .top_list .icon{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.55rem;
+}
+#topContainer .music_icon .top_list .icon img{
+  width:0.32rem;
+}
+#topContainer .music_icon .top_list .record_name{
+  display:inline-block;
+  width:1.5rem;
+}
+#topContainer .music_icon .top_list .star{
+  display: inline-block;
+  font-weight:bold;
+  width: 1.1rem;
+  margin-right:0.78rem;
 }
 
+#topContainer .music_icon .top_list .star img{
+  width:0.25rem;
+  padding-right:0.13rem;
+}
+#topContainer .music_icon .top_list .play{
+  display: inline-block;
+  width: 0.6rem;
+  vertical-align: bottom;
+  line-height: 0;
+}
+#topContainer .music_icon .top_list .play img{
+  display: inline-block;
+  width: 100%;
+}
 
+/*点赞页面 从下往上*/
+#praiseContainer{
+  width:100%;
+  height:100%;
+  position: absolute;
+  left:0;
+  top:0;
+  background: url("../img/darre/praise_bg.jpg") no-repeat;
+  background-size: 100% 100%;
+  line-height:0;
+}
+#praiseContainer .btn{
+  width:6.21rem;
+  height:1.15rem;
+  position: absolute;
+  left:50%;
+  margin-left: -3.10rem;
+  bottom: 0.28rem;
+  position: absolute;
+}
+#praiseContainer .btn img{
+  width:100%;
+}
+#praiseContainer .canclick{
+  width:4.31rem;
+  height:0.64rem;
+  position: absolute;
+  /*left:50%;*/
+  margin-left: 2.07rem;
+  bottom: 1.72rem;
+  position: absolute;
+}
+#praiseContainer .canclick img{
+  width:100%;
+}
+#praiseContainer .click{
+  width:0.49rem;
+  height:1.12rem;
+  position: absolute;
+  bottom: 1.54rem;
+  position: absolute;
+  right:0.48rem;
+}
+#praiseContainer .click img{
+  width:100%;
+}
+#praiseContainer .praiseimg{
+  width:6.88rem;
+  height:3.03rem;
+  position: absolute;
+  bottom: 4.06rem;
+  right:0.24rem;
+}
+#praiseContainer .praiseimg img{
+  width:100%;
+}
+#praiseContainer .praisedesc{
+  width:3.14rem;
+  height:1.09rem;
+  position: absolute;
+  bottom: 2.92rem;
+  right:0.45rem;
+}
+#praiseContainer .praisedesc img{
+  width:100%;
+}
+#praiseContainer .logo{
+  width:2.78rem;
+  /*height:1.09rem;*/
+  position: absolute;
+  left: 0.36rem;
+  top: 0.4rem;
+}
+#praiseContainer .logo img{
+  width:100%;
 
-
-
-
-
+}
+#praiseContainer .page_text{
+  position: absolute;
+  width:100%;
+  text-align: center;
+  color: #ffffff;
+  font-size:0.3rem;
+  /*font-weight:bold;*/
+  top: 1.36rem;
+}
+#praiseContainer .praise{
+  position: absolute;
+  text-align: center;
+  top: 0.3rem;
+  right: 0.42rem;
+}
+#praiseContainer .praise img{
+  width: 0.56rem;
+}
+#praiseContainer .praise .text{
+  font-size: 0.28rem;
+  font-weight:bold;
+  color: #eccb88;
+  padding-top: 0.18rem;
+}
