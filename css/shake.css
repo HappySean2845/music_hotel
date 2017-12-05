@@ -37,7 +37,8 @@
 
 .shake_page .tip {
 	position: absolute;
-	top: 7.66rem;
+	top: inherit;
+	bottom: 4.41rem;
 	left: 2.23rem;
 	width: 3.04rem;
 	height: 1.07rem;

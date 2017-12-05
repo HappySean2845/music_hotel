@@ -49,7 +49,7 @@
 .part_1 .step_1 .p5 {
   opacity: 0;
   transform: translateY(0.5rem);
-  transition: all 1s ease 3s;
+  transition: all 1.5s ease 3s;
 }
 
 
@@ -113,7 +113,7 @@
 
 .part_1 .step_3 .p1 {
   opacity: 0;
-  transition: opacity 1s ease 6s;
+  transition: opacity 1.5s ease 6s;
 }
 
 .part_1 .step_3 .p2 {
@@ -224,15 +224,15 @@
 }
 
 .amt_bg1 {
-  animation: amt_bg 4s linear 1.5s infinite;
+  animation: amt_bg 4s linear .5s infinite;
 }
 
 .amt_bg2 {
-  animation: amt_bg 5s linear 2.5s infinite;
+  animation: amt_bg 5s linear .5s infinite;
 }
 
 .amt_bg3 {
-  animation: amt_bg 6s linear 3.5s infinite;
+  animation: amt_bg 6s linear .5s infinite;
 }
 
 @keyframes amt_bg {
@@ -386,37 +386,31 @@
 }
 
 /*摇一摇*/
-.shake_p1 .font {
+.shake_page .shake_p1 .font {
   opacity: 0;
   transition: all 1.5s ease 1s;
-  transform: translateY(1rem);
 }
 
-.shake_p1 .tip {
-  opacity: 0;
-  transition: all 1.5s ease 1.5s;
-  transform: translateY(1rem);
-}
-
-.shake_p1 .shake  {
+.shake_page .shake_p1 .tip {
   opacity: 0;
   transition: all 1.5s ease 2s;
-  transform: translateY(1rem);
+}
+
+.shake_page .shake_p1 .shake  {
+  opacity: 0;
+  transition: all 1.5s ease 3s;
 }
 
 .animate.shake_p1 .font {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .animate.shake_p1 .tip {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .animate.shake_p1 .shake {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .shake_p2 .result_font {
