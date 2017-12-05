@@ -25,8 +25,19 @@
 </head>
 <body>
   <div id="container" class="content">
+    <div class="part loading">
+      <span>点击进入</span>
+    </div>
+    <div class="part video hide">
+      <video class="hotel hide"  id='hotel' x-webkit-airplay="true" preload="auto" x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true" x5-video-orientation="portrait" src="video/hotel.mp4">
+        <source src="video/hotel.mp4" type="video/mp4">
+      </video>
+      <video class="web hide" id="web" x-webkit-airplay="true" preload="auto" x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true" x5-video-orientation="portrait" src="video/web.mp4">
+        <source src="video/web.mp4" type="video/mp4">
+      </video>
+    </div>
     <!-- 第一页 -->
-    <div class="part part_1">
+    <div class="part part_1 hide">
       <div class="article article1 step step_1">
         <p class="p1">穿梭在<span>车水马龙</span>的建筑丛林间，</p>
         <p class="p2">有没有那么<span>一瞬间</span>，</p>
@@ -167,18 +178,18 @@
   <div class="part clip hide">
     <input type="file" id="file">
     <div class="view"></div>
-    <div class="clipBtn">确认截取</div>
+    <div class="clipBtn"></div>
   </div>
   <div class="part poster hide">
     <div class="will_hide">
       <div class="title">长按图片保存歌单</div>
       <div class="html2canvas">
         <img class="bg" src="">
-        <img class="layer" src="img/layer/1.png">
+        <img class="layer" src="">
       </div>
       <div class="btn_group">
         <div class="btn change_bg" style="margin-left:0.72rem" onclick="changePic()">更换照片</div>
-        <div class="btn change_layer" style="margin-left:.3rem">调整态度</div>
+        <div class="btn change_layer" style="margin-left:.3rem" onclick="changeLayer()">调整态度</div>
         <div class="submit"></div>
       </div>
       <div class="hint"></div>
@@ -297,6 +308,7 @@
     }
   </script>
   <script type="text/javascript" src="js/config.js"></script>
+  <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
   <script type="text/javascript" src="js/libs/jquery.min.js"></script>
   <script type="text/javascript" src="js/libs/parallax.js"></script>
   <script type="text/javascript" src="js/libs/md5.js"></script>
@@ -306,9 +318,11 @@
   <script type="text/javascript" src="js/libs/Photoclip.js"></script>
   <script type="text/javascript" src="js/libs/html2canvas.js"></script>
   <script type="text/javascript" src="js/libs/maskword.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/libs/resLoader.js"></script>
+  <script type="text/javascript" src="js/libs/loadJS.js"></script>
   <script type="text/javascript" src="js/xiami_music.js"></script>
   <script type="text/javascript" src="js/poster.js"></script>
   <script type="text/javascript" src="js/api.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

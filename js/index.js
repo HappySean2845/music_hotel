@@ -1,4 +1,57 @@
-$(function() {
+// $(function() {
+  var from_page = $_GET('frompage');
+  var video_web = document.getElementById('web');
+  var video_hotel = document.getElementById('hotel');
+  var loader = new resLoader({
+    resources: [
+      'img/cd.gif','img/layer/1.png','img/layer/2.png','img/layer/3.png','img/layer/4.png','img/layer/5.png','img/layer/6.png','img/layer/btn.png','img/layer/clip.png',
+      'img/darre/darre_htlp.png','video/web.mp4','video/hotel.mp4'
+    ],
+    onStart: function(total) {
+      console.log('start:' + total);
+    },
+    onProgress: function(current, total) {
+      // var percent = Math.floor(current / total * 100);
+      // console.log(current + '/' + total);
+    },
+    onComplete: function(total) {
+      $('.loading span').fadeIn();
+      // $('.loading').hide();
+      // $('.video').fadeIn();
+      // $('.video').find('.'+from_page).show();
+      // myVideo.play();
+    }
+  });
+  $('.loading span').click(function(){
+    $('.loading').hide();
+    $('.video').fadeIn();
+    if(from_page=='web'){
+      $('.web').show();
+      video_web.play();
+    }else{
+      $('.hotel').show();
+      video_hotel.play();
+    }
+  })
+  var endVideo = function() {
+    $(".video").hide();
+    if(from_page=='web'){
+      togglePage1();
+    }else{
+      toggleShakePage1();
+    }
+  }
+  video_web.addEventListener("ended", endVideo);
+  video_hotel.addEventListener("ended", endVideo);
+  loader.start();
+  //登录
+  var code = $_GET('code');
+  console.log('code:',code);
+  if(!localStorage.id||localStorage.id=='undefined'){
+    login(code,function(data){
+      console.log(data)
+    })
+  }
   var pic_base64 = '';
   var p1_btn = document.getElementById("p1_btn");
   var dis_tim = 1000;
@@ -37,10 +90,9 @@ $(function() {
     $('.part_2').fadeIn(500);
     $('.part_2').addClass('animate');
   }
-
-  setTimeout(function() {
-    $(".part_1").addClass("animate");
-  }, 500);
+  function togglePage1(){
+    $(".part_1").fadeIn().addClass("animate");
+  }
 
   var p2_note = document.querySelector('.part_2').querySelectorAll('.note');
   for(var i = 0; i < 3; i++){
@@ -113,14 +165,7 @@ $(function() {
   }
   var iframe = getXiamiPlayer();
   $('.btn_group').after(iframe);
-  //登录
-  var code = $_GET('code');
-  console.log('code:',code);
-  if(!localStorage.id||localStorage.id=='undefined'){
-    login(code,function(data){
-      console.log(data)
-    })
-  }
+
   $('.submit').click(function(){
     uploadImage(localStorage.id,img_base64,function(data){
       console.log("进入留资页面");
@@ -160,7 +205,7 @@ $(function() {
     $("#topContainer .help").fadeOut(500);
   })
 
-  // 切摇一摇页面 
+  // 切摇一摇页面
   // 添加此方法即可
   function toggleShakePage1(){
     $('.shake_page').fadeIn(500);
@@ -215,7 +260,8 @@ $(function() {
   }
 
   $('#shake_btn').on('click', function(){
-    alert('上传图片');
+    // alert('上传图片');
+    changePic();
   })
 
-});
+// });

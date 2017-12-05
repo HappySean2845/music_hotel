@@ -18,22 +18,29 @@
     <meta name="x5-page-mode" content="app">
     <meta name="msapplication-tap-highlight" content="no">
   <title></title>
-  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+  <script type="text/javascript" src="js/config.js?id=1"></script>
 </head>
 <body>
 <script type="text/javascript">
 function $_GET(name) {
   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-  var r = $window.location.search.substr(1).match(reg);
+  var r = window.location.search.substr(1).match(reg);
   if (r != null) return unescape(r[2]);
   return null;
 }
+var redirect_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5b621c2653ac8bc1&redirect_uri=http%3a%2f%2fharman.adleading.com%2fhome%2findex%2fredirect%3fredirect%3d[REDIRECT_URL]&response_type=code&scope=snsapi_base&state=0#wechat_redirect';
+var base_url = '';
 var f = $_GET('from');
 if(f=='hotel'){
-  window.location.href="web.html";
+  base_url = encodeURIComponent(Config.HOTEL_URL);
 }else{
-  window.location.href="hotel.html";
+  base_url = encodeURIComponent(Config.WEB_URL);
 }
+redirect_url = redirect_url.replace('[REDIRECT_URL]',base_url);
+// console.log(redirect_url);
+
+window.location.href=redirect_url
 </script>
 </body>
 </html>

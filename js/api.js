@@ -110,9 +110,9 @@ function complete_user(id,image,name,record_name,song_list,mobile,successCB){
     type : 'POST',
     data : {
       id           : id,
-      image        : image,
+      // image        : image,
       name         : name,
-      recorde_name : record_name,
+      record_name : record_name,
       song_list    : song_list,
       mobile       : mobile,
       timestamp    : timestamp,
