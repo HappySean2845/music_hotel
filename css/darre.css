@@ -295,7 +295,7 @@
 }
 #topContainer .music_icon .top_list .icon{
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   margin-right: 0.55rem;
 }
 #topContainer .music_icon .top_list .icon img{
@@ -303,13 +303,17 @@
 }
 #topContainer .music_icon .top_list .record_name{
   display:inline-block;
+  vertical-align: top;
   width:1.5rem;
+  height: 0.62rem;
+  overflow: hidden;
 }
 #topContainer .music_icon .top_list .star{
   display: inline-block;
   font-weight:bold;
   width: 1.1rem;
   margin-right:0.78rem;
+  vertical-align: top;
 }
 
 #topContainer .music_icon .top_list .star img{
@@ -321,6 +325,7 @@
   width: 0.6rem;
   vertical-align: bottom;
   line-height: 0;
+  vertical-align: top;
 }
 #topContainer .music_icon .top_list .play img{
   display: inline-block;
