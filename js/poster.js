@@ -1,5 +1,6 @@
 var img_base64 = '';
 var layer_index = 1;
+var is_click_change_layer = false;
 var pc = new PhotoClip('.view', {
   size: [document.documentElement.clientWidth,document.documentElement.clientHeight],
   outputSize: document.documentElement.clientWidth,
@@ -12,6 +13,7 @@ var pc = new PhotoClip('.view', {
     console.log('开始读取照片');
     $('.part_3').hide();
     $('.poster').hide();
+    $('.shake_page').hide();
     $('.clip').fadeIn(800);
     $('.html2canvas').show();
     $('.poster .layer').attr('src','img/layer/'+layer_index+'.png')
@@ -44,15 +46,17 @@ function changePic(){
   $('#file').click();
 }
 function changeLayer(){
-  if(layer_index<6){
-    layer_index++
-  }else{
-    layer_index = 1;
-  }
-  $('.html2canvas').fadeIn(800);
-  $('.final').hide();
-  $('.poster .layer').attr('src','img/layer/'+layer_index+'.png');
-  setTimeout(function(){
+  if(!is_click_change_layer){
+    is_click_change_layer = true
+    if(layer_index<4){
+      layer_index++
+    }else{
+      layer_index = 1;
+    }
+    $('.html2canvas').fadeIn(800);
+    $('.final').hide();
+    $('.poster .layer').attr('src','img/layer/'+layer_index+'.png');
+    setTimeout(function(){
       html2canvas(document.querySelector('.html2canvas'), {
         onrendered: function(canvas) {
           $('.html2canvas').hide();
@@ -63,5 +67,8 @@ function changeLayer(){
         // logging : true,
       });
     },800)
-
+    setTimeout(function(){
+      is_click_change_layer = false;
+    },1000)
+  }
 }

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+  <meta charset='utf-8'>
+  <meta name="description" content="华住音乐酒店"/>
+  <meta name="keywords" content="华住音乐酒店"/>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta name="screen-orientation" content="portrait">
+  <meta name="x5-orientation" content="portrait">
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="screen-orientation" content="portrait">
+  <meta name="x5-orientation" content="portrait">
+  <meta name="full-screen" content="yes">
+  <meta name="x5-fullscreen" content="true">
+  <meta name="browsermode" content="application">
+  <meta name="x5-page-mode" content="app">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>听见不同 想住就住</title>
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/darre.css">
+  <link rel="stylesheet" type="text/css" href="css/shake.css">
+</head>
+<body>
+  <div id="container" class="content">
+  <!-- 排行榜 -->
+  <div id="topContainer" class="page topContainer">
+    <div class="share_mask hide">
+      <img src="img/share.png">
+    </div>
+    <div class="music_icon">
+      <div class="how"><img src="img/darre/darre_how_19.png" alt=""></div>
+      <div class="logo"><img src="img/darre/darre_logo_03.png" alt=""></div>
+      <div class="darreImg"><img src="img/darre/darre_img_03.png" alt=""></div>
+      <div class="desc"><img src="img/darre/darre_desc_07.png" alt=""></div>
+      <div class="top6"><img src="img/darre/darre_top6_11.png" alt=""></div>
+      <div class="add"><img src="img/darre/darre_add_14.png"></div>
+      <div class="darre_icon_1"><img src="img/darre/darre_icon_1_03.png" alt=""></div>
+      <div class="darre_icon_2"><img src="img/darre/darre_icon_2_06.png" alt=""></div>
+      <div class="top_list">
+        <ul></ul>
+      </div>
+    </div>
+    <div class="darre_btn_1 again">
+      <img src="img/darre/darre_btn_1_03.png" alt="">
+    </div>
+    <div class="darre_btn_2 btn_share">
+      <img src="img/darre/darre_btn_2_03.png" alt="">
+    </div>
+    <div class="help hide"></div>
+  </div>
+  <script type="text/javascript">
+    (function (doc, win) {
+          var docEl = doc.documentElement,
+            size = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=750){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener('resize', size, false);
+        doc.addEventListener('DOMContentLoaded', size, false);
+    })(document, window);
+    function remToPx (rem){
+      return parseInt(rem / 750*document.documentElement.clientWidth*100);
+    }
+    function pxToRem(px){
+      return parseFloat(px * 750/document.documentElement.clientWidth/100);
+    }
+  </script>
+  <script type="text/javascript" src="js/config.js"></script>
+  <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+  <script type="text/javascript" src="js/libs/parallax.js"></script>
+  <script type="text/javascript" src="js/libs/md5.js"></script>
+  <script type="text/javascript" src="js/libs/hammer.min.js"></script>
+  <script type="text/javascript" src="js/libs/iscroll-zoom-min.js"></script>
+  <script type="text/javascript" src="js/libs/lrz.all.bundle.js"></script>
+  <script type="text/javascript" src="js/libs/Photoclip.js"></script>
+  <script type="text/javascript" src="js/libs/html2canvas.js"></script>
+  <script type="text/javascript" src="js/libs/maskword.js"></script>
+  <script type="text/javascript" src="js/libs/resLoader.js"></script>
+  <script type="text/javascript" src="js/libs/loadJS.js"></script>
+  <script type="text/javascript" src="js/xiami_music.js"></script>
+  <script type="text/javascript" src="js/poster.js"></script>
+  <script type="text/javascript" src="js/api.js"></script>
+  <script type="text/javascript" src="js/share.js"></script>
+  <script>
+    var id = localStorage.id || 4
+    getRank(id,function(o){
+      // if(o&&o.length>=1){
+      console.log('list',o);
+        var inner = "";
+      var d = o.list
+      if(!d) return;
+      for(var i = 0;i<d.length;i++){
+          var eachLine = '<li>' +
+            '<span class="icon"><img src="img/darre/darre_music_name_19.png" alt=""></span>' +
+            '<span class="record_name">'+d[i].record_name+' </span>' +
+            '<span class="star"><img src="img/darre/darre_music_star_22.png" alt="">'+d[i].follow+' </span>' +
+            '<span class="play" onclick="goFollow('+d[i].id+')"><img src="img/darre/darre_music_play_19.png" alt=""></span></li>';
+          inner = inner + eachLine;
+        }
+      $(".top_list ul").html(inner);
+    },function(err){
+      alert('信息有误，请重新填写')
+    })
+      //再来一次
+    $('.again').click(function(){
+      window.location.href = 'http://www.adleading.com/huazhu/music_hotel/redirect.html?from=web'
+    })
+    $('.btn_share').click(function(){
+      $('.share_mask').fadeIn();
+    })
+    $('.share_mask').click(function(){
+      $(this).fadeOut();
+    });
+    function goFollow(detail_id){
+      window.location.href=Config.FOLLOW_URL+'?detail_id='+detail_id;
+    }
+  </script>
+</body>
+</html>

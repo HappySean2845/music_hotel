@@ -15,7 +15,7 @@ music_list[5] = ['375261','87855','374039','374040','1795878471','1795461555','1
 music_list[6] = ['3580153','1772436271','1772068878','2200543','1769173994','384553','135655','376046','1770001633','3322023','1769639522',
 '383843','386749','1769979538','2052181','1769947263','3625167','386757','2088669','2269630','1773708373','1776422243','1769780309','3426143','112873'];
 function getXiamiPlayer(){
-  var music_url      = '//h.xiami.com/embed-player.html?type=song&id=[song_id]&auto=0&theme=light'
+  var music_url      = '//h.xiami.com/embed-player.html?type=song&id=[song_id]&auto=0&theme=dark';
   var list_id        = Math.round(Math.random()*6);
   var music_id       = Math.round(Math.random()*24);
   music_url          = music_url.replace('[song_id]',music_list[list_id][music_id]);

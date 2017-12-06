@@ -2,10 +2,17 @@
   var from_page = $_GET('frompage');
   var video_web = document.getElementById('web');
   var video_hotel = document.getElementById('hotel');
+  document.addEventListener('touchmove',function(e){
+    e.preventDefault();
+  })
+  // togglePage3(2)
+  if(from_page=='hotel'){
+    addWeiXinEvent('hotel')
+  }
   var loader = new resLoader({
     resources: [
-      'img/cd.gif','img/layer/1.png','img/layer/2.png','img/layer/3.png','img/layer/4.png','img/layer/5.png','img/layer/6.png','img/layer/btn.png','img/layer/clip.png',
-      'img/darre/darre_htlp.png','video/web.mp4','video/hotel.mp4'
+      'img/cd.gif','img/layer/1.png','img/layer/2.png','img/layer/3.png','img/layer/4.png','img/layer/btn.png','img/layer/clip.png','img/p2_light_01.png','img/p2_light_02.png',
+      'img/p2_light_03.png','img/darre/darre_htlp.png','video/web.mp4','video/hotel.mp4'
     ],
     onStart: function(total) {
       console.log('start:' + total);
@@ -15,7 +22,9 @@
       // console.log(current + '/' + total);
     },
     onComplete: function(total) {
-      $('.loading span').fadeIn();
+      setTimeout(function(){
+        $('.loading span').fadeIn();
+      },2000)
       // $('.loading').hide();
       // $('.video').fadeIn();
       // $('.video').find('.'+from_page).show();
@@ -54,7 +63,7 @@
   }
   var pic_base64 = '';
   var p1_btn = document.getElementById("p1_btn");
-  var dis_tim = 1000;
+  var dis_tim = 500;
   var timeout = undefined;
   createParallax();
   //长按屏幕
@@ -130,13 +139,16 @@
       pointerEvents: true,
     });
   }
-
+  $('#key').click(function(){
+    changePic();
+  })
   function addKeyTouchFun(){
     var key = document.getElementById("key");
     var max_length = 3.8;
     var dis_touch = '';
     var st_pos = 0;
     key.addEventListener('touchstart', function(event){
+      event.preventDefault()
       console.log('开始拖动', event);
       st_pos = parseInt(event.targetTouches[0].pageX);
     });
@@ -153,51 +165,69 @@
     });
 
     key.addEventListener('touchend', function(event){
+      // event.preventDefault()
       console.log('停止滑动', event);
       var dis_touch = pxToRem(event.changedTouches[0].pageX - st_pos);
       console.log(dis_touch);
       if(dis_touch >= max_length) {
         //上传照片
-        changePic();
+        // changePic();
+        $('.part_3 .touch').hide();
+        $('.click_file').fadeIn();
       }
       dis_touch = 0;
       $(key).css('transition', 'all 0.5s').css('transform', 'translateX(' + dis_touch + 'rem');
     });
   }
-
+  $('.click_file').click(function(){
+    changePic();
+  })
   var iframe = getXiamiPlayer();
   $('.btn_group').after(iframe);
 
   $('.submit').click(function(){
+    $('.mask').show();
     uploadImage(localStorage.id,img_base64,function(data){
+      // console.log(img_base64)
+      $('.mask').hide();
       console.log("进入留资页面");
       $(".poster").fadeOut(500);
       $("#infoContainer").fadeIn(500);
+    },function(err){
+      $('.mask').hide();
     })
   })
   $("#infoContainer .btn_confirm").click(function(){
-    complete_user(localStorage.id,window.img_base64,$("#name").val(),$("#record_name").val(),window.user_given_music_list,$("#mobile").val(),function(){
-      alert("留资成功");   //跳转到排行榜界面
+    complete_user(localStorage.id,window.img_base64,$("#name").val(),$("#record_name").val(),window.user_given_music_list,$("#mobile").val(),function(data){
+        //跳转到排行榜界面
+        $("#infoContainer").fadeOut(500);
+        $("#topContainer").fadeIn(500);
+      })
+  })
+  $("#infoContainer .btn_confirm").click(function(){
+    //跳转到排行榜界面
       $("#infoContainer").fadeOut(500);
       $("#topContainer").fadeIn(500);
       getRank(localStorage.id,function(o){
-        // if(o&&o.length>=1){
-        console.log('list',o);
-          var inner = "";
-        var d = JSON.parse(o)["list"];
-        if(!d) return;
-        for(var i = 0;i<d.length;i++){
-            var eachLine = '<li>' +
-              '<span class="icon"><img src="img/darre/darre_music_name_19.png" alt=""></span>' +
-              '<span class="record_name">'+d[i].record_name+' </span>' +
-              '<span class="star"><img src="img/darre/darre_music_star_22.png" alt="">'+d[i].follow+' </span>' +
-              '<span class="play"><img src="img/darre/darre_music_play_19.png" alt=""></span></li>';
-            inner = inner + eachLine;
-          }
-        $(".top_list ul").html(inner);
-      });
+      // if(o&&o.length>=1){
+      console.log('list',o);
+        var inner = "";
+      var d = o.list
+      if(!d) return;
+      for(var i = 0;i<d.length;i++){
+          var eachLine = '<li>' +
+            '<span class="icon"><img src="img/darre/darre_music_name_19.png" alt=""></span>' +
+            '<span class="record_name">'+d[i].record_name+' </span>' +
+            '<span class="star"><img src="img/darre/darre_music_star_22.png" alt="">'+d[i].follow+' </span>' +
+            '<span class="play" onclick="goFollow('+d[i].id+')"><img src="img/darre/darre_music_play_19.png" alt=""></span></li>';
+          inner = inner + eachLine;
+        }
+      $(".top_list ul").html(inner);
     })
   })
+  function btnCancel(){
+    goFollow(localStorage.id);
+  }
   $("#topContainer .how").click(function(){
     console.log("出玩法提示");
     $("#topContainer .help").fadeIn(500);
@@ -206,59 +236,9 @@
     console.log("移除玩法提示");
     $("#topContainer .help").fadeOut(500);
   })
-
-  // 切摇一摇页面
-
-  // var iframe = getXiamiPlayer();
-  // $('.btn_group').after(iframe);
-  // //登录
-  // var code = $_GET('code');
-  // console.log('code:',code);
-  // if(!localStorage.id||localStorage.id=='undefined'){
-  //   login(code,function(data){
-  //     console.log(data)
-  //   })
-  // }
-  // $('.submit').click(function(){
-  //   uploadImage(localStorage.id,img_base64,function(data){
-  //     console.log("进入留资页面");
-  //     $(".poster").fadeOut(500);
-  //     $("#infoContainer").fadeIn(500);
-  //   })
-  // })
-  // $("#infoContainer .btn_confirm").click(function(){
-  //   complete_user(localStorage.id,window.img_base64,$("#name").val(),$("#record_name").val(),window.user_given_music_list,$("#mobile").val(),function(){
-  //     alert("留资成功");   //跳转到排行榜界面
-  //     $("#infoContainer").fadeOut(500);
-  //     $("#topContainer").fadeIn(500);
-  //     getRank(localStorage.id,function(o){
-  //       // if(o&&o.length>=1){
-  //       console.log('list',o);
-  //         var inner = "";
-  //       var d = JSON.parse(o)["list"];
-  //       if(!d) return;
-  //       for(var i = 0;i<d.length;i++){
-  //           var eachLine = '<li>' +
-  //             '<span class="icon"><img src="img/darre/darre_music_name_19.png" alt=""></span>' +
-  //             '<span class="record_name">'+d[i].record_name+' </span>' +
-  //             '<span class="star"><img src="img/darre/darre_music_star_22.png" alt="">'+d[i].follow+' </span>' +
-  //             '<span class="play"><img src="img/darre/darre_music_play_19.png" alt=""></span></li>';
-  //           inner = inner + eachLine;
-  //         }
-  //       $(".top_list ul").html(inner);
-  //     });
-  //   })
-  // })
-  // $("#topContainer .how").click(function(){
-  //   console.log("出玩法提示");
-  //   $("#topContainer .help").fadeIn(500);
-  // })
-  // $("#topContainer .help").click(function(){
-  //   console.log("移除玩法提示");
-  //   $("#topContainer .help").fadeOut(500);
-  // })
-//
-
+  function goFollow(detail_id){
+    window.location.href=Config.FOLLOW_URL+'?detail_id='+detail_id;
+  }
   // 添加此方法即可
   function toggleShakePage1(){
     $('.shake_page').fadeIn(500);
@@ -303,7 +283,16 @@
       }
     }
   }
-
+  //再来一次
+  $('.again').click(function(){
+    window.location.href = 'http://www.adleading.com/huazhu/music_hotel/redirect.html?from='+from_page;
+  });
+  $('.btn_share').click(function(){
+    $('.share_mask').fadeIn();
+  });
+  $('.share_mask').click(function(){
+    $(this).fadeOut();
+  });
   function toggleShakePage2(){
     $('.shake_page').removeClass('shake_part');
     $('.shake_page .shake_p1').removeClass('animate');

@@ -18,33 +18,25 @@
     <meta name="browsermode" content="application">
     <meta name="x5-page-mode" content="app">
     <meta name="msapplication-tap-highlight" content="no">
-    <title>华住</title>
+    <title>听见不同 想住就住</title>
     <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/darre.css">
 </head>
 <body>
 <div id="praiseContainer">
-    <div class="logo"><img src="img/darre/darre_logo_03.png" alt=""></div>
-    <div class="page_text">长按图片保存歌单</div>
-    <div class="praise">
+    <img src="" class="bg">
+    <div class="page_text">长按保存</div>
+    <div class="praise" onclick="clickFollow()">
         <img src="img/darre/praise_icon_03.png" alt="">
-        <div class="text">87</div>
+        <div class="text"></div>
     </div>
-    <div class="praiseimg">
-        <img src="img/darre/praise_img_07.png" alt="">
-    </div>
-    <div class="praisedesc">
-        <img src="img/darre/praise_desc_11.png" alt="">
-    </div>
-    <div class="canclick">
-        <img src="img/darre/praise_canclick_15.png" alt="">
-    </div>
-    <div class="click">
+    <!-- <div class="click">
         <img src="img/darre/praise_click_15.png" alt="">
-    </div>
-    <div class="btn">
+    </div> -->
+    <div class="btn" onclick="go()">
         <img src="img/darre/praise_btn_23.png" alt="">
     </div>
+    <div class="go_rank" onclick="goRank()"></div>
 </div>
 <script type="text/javascript">
   (function (doc, win) {
@@ -63,6 +55,48 @@
     doc.addEventListener('DOMContentLoaded', size, false);
   })(document, window);
 </script>
-<script type="text/javascript" src="js/darre.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript" src="js/libs/jquery.min.js"></script>
+<script type="text/javascript" src="js/libs/md5.js"></script>
+<script type="text/javascript" src="js/api.js"></script>
+<script type="text/javascript" src="js/share.js"></script>
+<script>
+  var detail_id = $_GET('detail_id');
+  var code = $_GET('code');
+  console.log('code:',code);
+  if(!localStorage.id||localStorage.id=='undefined'){
+    login(code,function(data){
+      getDetail(data.user.id,detail_id,function(data){
+        init(data.user.image,data.user.follow)
+      })
+    })
+  }else{
+    getDetail(localStorage.id,detail_id,function(data){
+      init(data.user.image,data.user.follow)
+    })
+  }
+  addWeiXinEvent()
+  function init(bg,follow){
+    $('.bg').attr('src',bg);
+    $('.text').html(follow);
+  }
+  function clickFollow(){
+    follow(localStorage.id,detail_id,function(data){
+      if(data.status=='success'){
+        alert('点赞成功~');
+        $('.text').html(parseInt($('.text').html())+1)
+      }else{
+        alert('你已经点过赞啦~')
+      }
+    })
+  }
+  function goRank(){
+    window.location.href=Config.RANK_URL;
+  }
+  function go(){
+    window.location.href=Config.ORIGIN_WEB_URL;
+  }
+</script>
 </body>
 </html>

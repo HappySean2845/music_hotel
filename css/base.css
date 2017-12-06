@@ -19,7 +19,13 @@ html, body {
        url(webfont.woff),
        url(webfont.eot) ;
 }
-
+.mask{
+  position:absolute;
+  z-index:22;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:url('../img/loading_small.gif') center no-repeat rgba(0,0,0,.4);
+}
 .content {
   background-image: url(../img/p1_bg.jpg);
 }
@@ -29,10 +35,12 @@ html, body {
 }
 .loading span{
   display:none;
-  color:#fff;
-  width:100%;
-  margin-top:4rem;
-  text-align:center;
+  width:1.57rem;height:1.57rem;
+  position:absolute;
+  top:29%;
+  left:41%;
+  background:url(../img/play.png);
+  background-size:100%;
 }
 .content, .part {
   width: 100%;
@@ -295,7 +303,7 @@ html, body {
 .item .light {
   position: absolute;
   width: 0.5rem;
-  height: 1.11rem;
+  height: 1.5rem;
   background-size: 100%;
   background-repeat: no-repeat;
   z-index: 10;
@@ -328,7 +336,7 @@ html, body {
   top: 0.4rem;
   right: 2rem;
   width: 0.5rem;
-  height: 0.81rem;
+  height:1.2rem;
   background-image: url(../img/p2_note_01.png);
 }
 
@@ -349,8 +357,7 @@ html, body {
 .item2 .note {
   top: 0.4rem;
   left: 0.75rem;
-  background-image: url(../img/p1_main_note.png);
-  transform: rotate(-15deg);
+  background-image: url(../img/p2_note_02.png);
 }
 
 .item3 .tit {
@@ -386,6 +393,7 @@ html, body {
   position: absolute;
   width: 100%;
   top: 5.46rem;
+  padding-left:0.2rem;
 }
 
 .part_3 .head_bg {
@@ -458,11 +466,20 @@ html, body {
 .part_3 .touch {
   position: absolute;
   left: 1.35rem;
-  bottom: 2.6rem;
+  top: 8rem;
   font-size: 0;
   z-index: 33;
 }
-
+.part_3 .click_file{
+  width: 5.16rem;height:0.96rem;
+  background:url(../img/meet.png) center no-repeat;
+  background-size:100%;
+  position:absolute;
+  top:8rem;
+  left:16%;
+  display:none;
+  z-index:2;
+}
 .part_3 .touch_lack {
   width: 4.8rem;
   height: 0.72rem;
@@ -550,13 +567,17 @@ canvas{
 }
 .poster .title{
   position:absolute;
-  top:0.7rem;
+  top:0.8rem;
   width:100%;
   color:#fff;
   text-align:center;
   letter-spacing:0.1rem;
   font-size:0.3rem;
   z-index:3;
+}
+.poster .will_hide{
+  width:100%;height:100%;
+  overflow:hidden;
 }
 .poster .bg,.poster .layer,.poster .html2canvas,.poster .final{
   position:absolute;
@@ -600,4 +621,16 @@ iframe{
   height:1rem;
   position: absolute;
   margin-top: 1.2rem;
+}
+.share_mask{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  background-color:rgba(0,0,0,.7);
+  z-index:2;
+}
+.share_mask img{
+  width:2.98rem;
+  position:absolute;
+  top:0.5rem;right:1rem;
 }

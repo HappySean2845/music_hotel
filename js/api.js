@@ -47,7 +47,7 @@ function login(code,successCB){
   })
 }
 //上传照片 img:base64
-function uploadImage(id,image,successCB){
+function uploadImage(id,image,successCB,errorCB){
   var timestamp = Math.floor(new Date().getTime()/1000);
   var sign = md5(id.toString()+timestamp.toString()+Config.SIGN_KEY);
   $.ajax({
@@ -63,10 +63,11 @@ function uploadImage(id,image,successCB){
     success : function(data){
       console.log('上传照片返回',data);
       if(data.status=='success'){
-        alert('图片上传成功!')
+        // alert('图片上传成功!')
         successCB(data);
       }else{
         alert('上传失败，请稍后再试');
+        errorCB(data);
       }
     }
   })
@@ -76,7 +77,7 @@ function uploadImage(id,image,successCB){
 //id是login接口返回的id
 //image:base64的
 //sobg_list 数组？待定
-function complete_user(id,image,name,record_name,song_list,mobile,successCB){
+function complete_user(id,image,name,record_name,song_list,mobile,successCB,errorCB){
   var timestamp = Math.floor(new Date().getTime()/1000);
   var sign = md5(id.toString()+timestamp.toString()+Config.SIGN_KEY);
   if(!validate.isEmpty(name)){
@@ -87,8 +88,8 @@ function complete_user(id,image,name,record_name,song_list,mobile,successCB){
       if(name.indexOf(MaskWord.text[i]) > -1) {
         console.log('有屏蔽字，屏蔽字为：',MaskWord.text[i]);
         alert('含有屏蔽字')
-        break;
         return;
+        break;
       }
     }
   }
@@ -100,10 +101,14 @@ function complete_user(id,image,name,record_name,song_list,mobile,successCB){
       if(record_name.indexOf(MaskWord.text[i]) > -1) {
         console.log('有屏蔽字，屏蔽字为：',MaskWord.text[i]);
         alert('含有屏蔽字');
-        break;
         return;
+        break;
       }
     }
+  }
+  if(!validate.isMobile(mobile)){
+    alert('请填写正确的手机号');
+    return;
   }
   $.ajax({
     url : Config.API_URL+'complete_user.php',
@@ -112,15 +117,20 @@ function complete_user(id,image,name,record_name,song_list,mobile,successCB){
       id           : id,
       // image        : image,
       name         : name,
-      record_name : record_name,
+      record_name  : record_name,
       song_list    : song_list,
       mobile       : mobile,
       timestamp    : timestamp,
       sign         : sign,
     },
+    dataType : 'json',
     success : function(data){
       console.log('完善用户信息返回',data);
-      successCB(data);
+      if(data.status=='success'){
+        successCB(data);
+      }else{
+        errorCB(data);
+      }
     }
   })
 }
@@ -131,6 +141,7 @@ function follow(id,follow_id,successCB){
   $.ajax({
     url : Config.API_URL+'follow.php',
     type : 'GET',
+    dataType : 'json',
     data : {
       id           : id,
       follow_id    : follow_id,
@@ -138,7 +149,7 @@ function follow(id,follow_id,successCB){
       sign         : sign,
     },
     success : function(data){
-      console.log('完善用户信息返回',data);
+      console.log('点赞返回',data);
       successCB(data);
     }
   })
@@ -150,6 +161,7 @@ function getRank(id,successCB){
   $.ajax({
     url : Config.API_URL+'rank.php',
     type : 'GET',
+    dataType : 'json',
     data : {
       id           : id,
       timestamp    : timestamp,
@@ -162,12 +174,13 @@ function getRank(id,successCB){
   })
 }
 //查看单个用户详情
-function getDetail(id,detail_id){
+function getDetail(id,detail_id,successCB){
   var timestamp = Math.floor(new Date().getTime()/1000);
   var sign = md5(id.toString()+detail_id.toString()+timestamp.toString()+Config.SIGN_KEY);
   $.ajax({
     url : Config.API_URL+'detail.php',
     type : 'GET',
+    dataType : 'json',
     data : {
       id           : id,
       check_id     : detail_id,

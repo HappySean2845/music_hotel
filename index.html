@@ -17,16 +17,19 @@
   <meta name="browsermode" content="application">
   <meta name="x5-page-mode" content="app">
   <meta name="msapplication-tap-highlight" content="no">
-  <title>华住</title>
+  <title>听见不同 想住就住</title>
   <link rel="stylesheet" type="text/css" href="css/base.css">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <link rel="stylesheet" type="text/css" href="css/darre.css">
   <link rel="stylesheet" type="text/css" href="css/shake.css">
 </head>
 <body>
+  <div class="mask hide">
+
+  </div>
   <div id="container" class="content">
     <div class="part loading">
-      <span>点击进入</span>
+      <span></span>
     </div>
     <div class="part video hide">
       <video class="hotel hide"  id='hotel' x-webkit-airplay="true" preload="auto" x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true" x5-video-orientation="portrait" src="video/hotel.mp4">
@@ -165,8 +168,9 @@
           <span class="lack"></span>
         </div>
         <div class="touch_tips"></div>
-        <div class="tips">(向右滑动,上传照片)</div>
+        <div class="tips">(向右滑动，上传照片)</div>
       </div>
+      <div class="click_file"></div>
       <div class="line_bg bg"></div>
       <div class="note_bg bg"></div>
       <div class="pillow_bg bg"></div>
@@ -182,7 +186,7 @@
   </div>
   <div class="part poster hide">
     <div class="will_hide">
-      <div class="title">长按图片保存歌单</div>
+      <div class="title">长按保存</div>
       <div class="html2canvas">
         <img class="bg" src="">
         <img class="layer" src="">
@@ -224,11 +228,15 @@
         </ul>
       </div>
       <div class="btn_confirm" style="margin-top: 0.4rem  ;"><img src="img/darre/info_confirm_03.png" alt=""></div>
-      <div class="btn_cancel"><img src="img/darre/info_cancel_07.png" alt=""></div>
-      <div class="btn_gobang"><img src="img/darre/info_gobang_11.png" alt=""></div>
+      <div class="btn_cancel" onclick="btnCancel()"><img src="img/darre/info_cancel_07.png" alt=""></div>
+      <!-- <div class="btn_gobang"><img src="img/darre/info_gobang_11.png" alt=""></div> -->
     </div>
   </div>
+  <!-- 排行榜 -->
   <div id="topContainer" class="page topContainer hide">
+    <div class="share_mask hide">
+      <img src="img/share.png">
+    </div>
     <div class="music_icon">
       <div class="how"><img src="img/darre/darre_how_19.png" alt=""></div>
       <div class="logo"><img src="img/darre/darre_logo_03.png" alt=""></div>
@@ -242,14 +250,16 @@
         <ul></ul>
       </div>
     </div>
-    <div class="darre_btn_1">
+    <div class="darre_btn_1 again">
       <img src="img/darre/darre_btn_1_03.png" alt="">
     </div>
-    <div class="darre_btn_2">
+    <div class="darre_btn_2 btn_share">
       <img src="img/darre/darre_btn_2_03.png" alt="">
     </div>
     <div class="help hide"></div>
   </div>
+
+  <!-- 摇一摇 -->
   <div class="part shake_page hide">
     <div class="line_bg bg"></div>
     <div class="note_bg bg"></div>
@@ -277,7 +287,6 @@
     </div>
   </div>
   <div>
-<!--     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="310" height="430" src="//h.xiami.com/embed-player.html?type=song&id=1771352003&auto=0&res=310x430&theme=light"></iframe> -->
   </div>
 </div>
   <script type="text/javascript">
@@ -318,8 +327,9 @@
   <script type="text/javascript" src="js/libs/resLoader.js"></script>
   <script type="text/javascript" src="js/libs/loadJS.js"></script>
   <script type="text/javascript" src="js/xiami_music.js"></script>
-  <script type="text/javascript" src="js/poster.js"></script>
+  <script type="text/javascript" src="js/poster.js?id=1"></script>
   <script type="text/javascript" src="js/api.js"></script>
+  <script type="text/javascript" src="js/share.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
