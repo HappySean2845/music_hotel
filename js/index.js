@@ -2,6 +2,8 @@
   var from_page = $_GET('frompage');
   var video_web = document.getElementById('web');
   var video_hotel = document.getElementById('hotel');
+  var bgm = document.getElementById('BGM');
+  window.musicStart = false;
   document.addEventListener('touchmove',function(e){
     e.preventDefault();
   })
@@ -24,6 +26,7 @@
     onComplete: function(total) {
       setTimeout(function(){
         $('.loading span').fadeIn();
+        $('.loading').removeClass('loading')
       },2000)
       // $('.loading').hide();
       // $('.video').fadeIn();
@@ -31,9 +34,13 @@
       // myVideo.play();
     }
   });
-  $('.loading span').click(function(){
-    $('.loading').hide();
+  $('.load span').click(function(){
+    $('.load').hide();
     $('.video').fadeIn();
+    $('.music_play').fadeIn();
+    $(".music_play").addClass("xz");
+    window.musicStart = true;
+    bgm.play()
     if(from_page=='web'){
       $('.web').show();
       video_web.play();
@@ -42,6 +49,18 @@
       video_hotel.play();
     }
   })
+  //音乐开关
+  $(".music_play").on("click",function () {
+      if(window.musicStart){
+        bgm.pause();
+        $(".music_play").removeClass("xz");
+        window.musicStart = false;
+      }else{
+        bgm.play();
+        $(".music_play").addClass("xz");
+        window.musicStart = true;
+      }
+    })
   var endVideo = function() {
     $(".video").hide();
     if(from_page=='web'){
@@ -183,9 +202,8 @@
     changePic();
   })
   var iframe = getXiamiPlayer();
-  $('.btn_group').after(iframe);
-
-  $('.submit').click(function(){
+  $('.goto_rank').before(iframe);
+  $('.btn_group_next .goto_rank').click(function(){
     $('.mask').show();
     uploadImage(localStorage.id,img_base64,function(data){
       // console.log(img_base64)
@@ -197,36 +215,37 @@
       $('.mask').hide();
     })
   })
-  $("#infoContainer .btn_confirm").click(function(){
-    complete_user(localStorage.id,window.img_base64,$("#name").val(),$("#record_name").val(),window.user_given_music_list,$("#mobile").val(),function(data){
-        //跳转到排行榜界面
-        $("#infoContainer").fadeOut(500);
-        $("#topContainer").fadeIn(500);
-      })
+  $('.submit').click(function(){
+    $('.btn_group').fadeOut();
+    $('.btn_group_next').fadeIn();
   })
   $("#infoContainer .btn_confirm").click(function(){
-    //跳转到排行榜界面
-      $("#infoContainer").fadeOut(500);
-      $("#topContainer").fadeIn(500);
-      getRank(localStorage.id,function(o){
-      // if(o&&o.length>=1){
-      console.log('list',o);
-        var inner = "";
-      var d = o.list
-      if(!d) return;
-      for(var i = 0;i<d.length;i++){
-          var eachLine = '<li>' +
-            '<span class="icon"><img src="img/darre/darre_music_name_19.png" alt=""></span>' +
-            '<span class="record_name">'+d[i].record_name+' </span>' +
-            '<span class="star"><img src="img/darre/darre_music_star_22.png" alt="">'+d[i].follow+' </span>' +
-            '<span class="play" onclick="goFollow('+d[i].id+')"><img src="img/darre/darre_music_play_19.png" alt=""></span></li>';
-          inner = inner + eachLine;
-        }
-      $(".top_list ul").html(inner);
+    complete_user(localStorage.id,'',$("#name").val(),$("#record_name").val(),window.user_given_music_list,$("#mobile").val(),function(data){
+      goFollow(localStorage.id)
+      // $("#infoContainer").fadeOut(500);
+      // $("#topContainer").fadeIn(500);
+      // getRank(localStorage.id,function(o){
+      // // if(o&&o.length>=1){
+      //   console.log('list',o);
+      //   var inner = "";
+      //   var d = o.list
+      //   if(!d) return;
+      //   for(var i = 0;i<d.length;i++){
+      //     var eachLine = '<li>' +
+      //       '<span class="icon"><img src="img/darre/darre_music_name_19.png" alt=""></span>' +
+      //       '<span class="record_name">'+d[i].record_name+' </span>' +
+      //       '<span class="star"><img src="img/darre/darre_music_star_22.png" alt="">'+d[i].follow+' </span>' +
+      //       '<span class="play" onclick="goFollow('+d[i].id+')"><img src="img/darre/darre_music_play_19.png" alt=""></span></li>';
+      //     inner = inner + eachLine;
+      //   }
+      //   $(".top_list ul").html(inner);
+      // })
     })
+
   })
   function btnCancel(){
-    goFollow(localStorage.id);
+    // goFollow(localStorage.id);
+    $('.share_mask').fadeIn();
   }
   $("#topContainer .how").click(function(){
     console.log("出玩法提示");
@@ -288,6 +307,12 @@
     window.location.href = 'http://www.adleading.com/huazhu/music_hotel/redirect.html?from='+from_page;
   });
   $('.btn_share').click(function(){
+    $('.share_mask').fadeIn();
+  });
+  $('.poster_share').click(function(){
+    $('.share_mask').fadeIn();
+  });
+  $('.btn_group_next .share').click(function(){
     $('.share_mask').fadeIn();
   });
   $('.share_mask').click(function(){

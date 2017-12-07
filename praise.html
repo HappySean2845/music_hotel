@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="css/darre.css">
 </head>
 <body>
+<div class="share_mask hide"><img src="img/share.png"></div>
 <div id="praiseContainer">
     <img src="" class="bg">
     <div class="page_text">长按保存</div>
@@ -33,10 +34,10 @@
     <!-- <div class="click">
         <img src="img/darre/praise_click_15.png" alt="">
     </div> -->
-    <div class="btn" onclick="go()">
-        <img src="img/darre/praise_btn_23.png" alt="">
-    </div>
-    <div class="go_rank" onclick="goRank()"></div>
+    <div class="iframe"></div>
+    <div class="link" style="top:10.6rem" onclick="goRank()">进入爱乐之途唱片排行榜</div>
+    <div class="link" style="top:11rem" onclick="share()">邀请好友一起不期而遇</div>
+    <div class="link" style="top:11.4rem" onclick="go()">重新体验爱乐之途</div>
 </div>
 <script type="text/javascript">
   (function (doc, win) {
@@ -61,25 +62,30 @@
 <script type="text/javascript" src="js/libs/md5.js"></script>
 <script type="text/javascript" src="js/api.js"></script>
 <script type="text/javascript" src="js/share.js"></script>
+<script type="text/javascript" src="js/xiami_music.js"></script>
 <script>
   var detail_id = $_GET('detail_id');
   var code = $_GET('code');
+  var iframe;
   console.log('code:',code);
   if(!localStorage.id||localStorage.id=='undefined'){
     login(code,function(data){
       getDetail(data.user.id,detail_id,function(data){
-        init(data.user.image,data.user.follow)
+        init(data.user.image,data.user.follow,data.user.song_list,data.user.id)
       })
     })
   }else{
     getDetail(localStorage.id,detail_id,function(data){
-      init(data.user.image,data.user.follow)
+      init(data.user.image,data.user.follow,data.user.song_list,data.user.id)
     })
   }
-  addWeiXinEvent()
-  function init(bg,follow){
+
+  function init(bg,follow,song_list,user_id){
     $('.bg').attr('src',bg);
     $('.text').html(follow);
+    iframe = getXiamiPlayerById(song_list);
+    $('.iframe').html(iframe);
+    addWeiXinEvent('web',user_id)
   }
   function clickFollow(){
     follow(localStorage.id,detail_id,function(data){
@@ -97,6 +103,12 @@
   function go(){
     window.location.href=Config.ORIGIN_WEB_URL;
   }
+  function share(){
+    $('.share_mask').fadeIn();
+  }
+  $('.share_mask').click(function(){
+    $(this).fadeOut();
+  })
 </script>
 </body>
 </html>

@@ -24,12 +24,15 @@
   <link rel="stylesheet" type="text/css" href="css/shake.css">
 </head>
 <body>
-  <div class="mask hide">
-
-  </div>
+  <audio loop="true" sytle="display:none" id="BGM">
+    <source src="audio/bgm.mp3?kjk=0" type="audio/mpeg"></source>
+  </audio>
+  <div class="music_play"><img src="img/music.png"></div>
+  <div class="mask hide"></div>
+  <div class="share_mask hide"><img src="img/share.png"></div>
   <div id="container" class="content">
-    <div class="part loading">
-      <span></span>
+    <div class="part loading load">
+      <span>谁是这个音乐故事的主角？</span>
     </div>
     <div class="part video hide">
       <video class="hotel hide"  id='hotel' x-webkit-airplay="true" preload="auto" x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true" x5-video-orientation="portrait" src="video/hotel.mp4">
@@ -183,6 +186,7 @@
     <input type="file" id="file">
     <div class="view"></div>
     <div class="clipBtn"></div>
+    <div class="clip_hint">更换照片</div>
   </div>
   <div class="part poster hide">
     <div class="will_hide">
@@ -195,6 +199,11 @@
         <div class="btn change_bg" style="margin-left:0.72rem" onclick="changePic()">更换照片</div>
         <div class="btn change_layer" style="margin-left:.3rem" onclick="changeLayer()">调整态度</div>
         <div class="submit"></div>
+        <div class="poster_share"></div>
+      </div>
+      <div class="btn_group_next">
+        <div class="hint goto_rank">参与爱乐之途唱片排行榜</div>
+        <div class="hint share">邀请好友共享爱乐之途</div>
       </div>
       <div class="hint"></div>
     </div>
@@ -234,9 +243,6 @@
   </div>
   <!-- 排行榜 -->
   <div id="topContainer" class="page topContainer hide">
-    <div class="share_mask hide">
-      <img src="img/share.png">
-    </div>
     <div class="music_icon">
       <div class="how"><img src="img/darre/darre_how_19.png" alt=""></div>
       <div class="logo"><img src="img/darre/darre_logo_03.png" alt=""></div>

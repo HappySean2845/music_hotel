@@ -1,5 +1,7 @@
 var user_given_music_list = '';
 var music_list = [];
+var list_id        = Math.round(Math.random()*6);
+var music_id       = Math.round(Math.random()*24);
 music_list[0] = ['1795766385','3351083','1770681782','1792702528','2088672','1772207340','2074443','2069506','1792568095','1773758974','1772872496',
 '1770488614','1771512771','376165','2072378','2095209','1773443324','1771547251','1769744669','1771805701','1229766','1769629171','1769532305','3381911','1792568097'];
 music_list[1] = ['1772440490','1776393120','1792681219','3307103','2654392','3544303','1769939711','2237635','2087837','1775353754','1772291995',
@@ -16,9 +18,19 @@ music_list[6] = ['3580153','1772436271','1772068878','2200543','1769173994','384
 '383843','386749','1769979538','2052181','1769947263','3625167','386757','2088669','2269630','1773708373','1776422243','1769780309','3426143','112873'];
 function getXiamiPlayer(){
   var music_url      = '//h.xiami.com/embed-player.html?type=song&id=[song_id]&auto=0&theme=dark';
-  var list_id        = Math.round(Math.random()*6);
-  var music_id       = Math.round(Math.random()*24);
   music_url          = music_url.replace('[song_id]',music_list[list_id][music_id]);
+  console.log(music_url);
+  var iframe         = document.createElement('iframe');
+  iframe.src         = music_url;
+  iframe.frameBorder ="no";
+  console.log(iframe)
+  user_given_music_list = list_id+','+music_id;         //用于接口传
+  return iframe;
+}
+function getXiamiPlayerById(id){
+  id = id.split(',');
+  var music_url      = '//h.xiami.com/embed-player.html?type=song&id=[song_id]&auto=0&theme=dark';
+  music_url          = music_url.replace('[song_id]',music_list[id[0]][id[1]]);
   console.log(music_url);
   var iframe         = document.createElement('iframe');
   iframe.src         = music_url;

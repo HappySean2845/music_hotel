@@ -45,6 +45,9 @@ var pc = new PhotoClip('.view', {
 function changePic(){
   $('#file').click();
 }
+$('.clip_hint').click(function(){
+  changePic();
+})
 function changeLayer(){
   if(!is_click_change_layer){
     is_click_change_layer = true
