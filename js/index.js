@@ -133,7 +133,16 @@
       };
     })(i);
   }
-
+  $('.back').click(function(){
+    $('.part_3').removeClass('animate').fadeOut();
+    $($('.part_3 .head_bg')[0]).addClass('hide');
+    $($('.part_3 .head_bg')[1]).addClass('hide');
+    $($('.part_3 .head_bg')[2]).addClass('hide');
+    togglePage2();
+    $('.part_2 .note').eq(0).prev().hide();
+    $('.part_2 .note').eq(1).prev().hide();
+    $('.part_2 .note').eq(2).prev().hide();
+  })
   function togglePage3(t){
     $('.part_2').removeClass('animate');
     $('.part_2').fadeOut(500);

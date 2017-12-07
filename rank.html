@@ -125,6 +125,14 @@
     function goFollow(detail_id){
       window.location.href=Config.FOLLOW_URL+'?detail_id='+detail_id;
     }
+    $("#topContainer .how").click(function(){
+    console.log("出玩法提示");
+    $("#topContainer .help").fadeIn(500);
+  })
+  $("#topContainer .help").click(function(){
+    console.log("移除玩法提示");
+    $("#topContainer .help").fadeOut(500);
+  })
   </script>
 </body>
 </html>

@@ -1,4 +1,13 @@
 /*留资信息页*/
+html, body {
+  font-family: "MyWebFont";
+}
+@font-face {
+  font-family: "MyWebFont";
+  src: url(webfont.ttf),
+       url(webfont.woff),
+       url(webfont.eot) ;
+}
 *{
   margin:0;
   padding: 0;
