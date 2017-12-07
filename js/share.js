@@ -34,9 +34,9 @@ wx.ready(function() {
 var addWeiXinEvent = function(from,id) {
     if(from=='web'){
         $.shareUrl = Config.ORIGIN_WEB_URL;
-        $.timelineTitle = "别点开，否则你会停不下来！";
-        $.shareAppDesc = "拯救枯燥日常，还得靠它";
-        $.shareAppTitle = "别点开，否则你会停不下来！";
+        $.timelineTitle = "谁是这个音乐故事的主角？";
+        $.shareAppDesc = "来体验与之不期而遇的美好";
+        $.shareAppTitle = "谁是这个音乐故事的主角？";
     }else if(from=='hotel'){
         $.shareUrl = Config.ORIGIN_HOTEL_URL;
         $.timelineTitle = "你的朋友给了你一个会响的见面礼！";
@@ -47,9 +47,9 @@ var addWeiXinEvent = function(from,id) {
             id = 4;
         }
         $.shareUrl = Config.FOLLOW_URL+'?detail_id='+id;
-        $.timelineTitle = "别点开，否则你会停不下来！";
-        $.shareAppDesc = "最想与你不期而遇的，居然是ta？";
-        $.shareAppTitle = "别点开，否则你会停不下来！";
+        $.timelineTitle = "谁是这个音乐故事的主角？";
+        $.shareAppDesc = "来体验与之不期而遇的美好";
+        $.shareAppTitle = "谁是这个音乐故事的主角？";
     }
     $.shareImage = "http://www.adleading.com/huazhu/landing_page/img/share.jpg";
     wx.onMenuShareAppMessage({
