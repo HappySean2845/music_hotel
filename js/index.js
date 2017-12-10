@@ -3,11 +3,17 @@
   var video_web = document.getElementById('web');
   var video_hotel = document.getElementById('hotel');
   var bgm = document.getElementById('BGM');
+  function playBgm(){
+    $('.music_play').fadeIn();
+    $(".music_play").addClass("xz");
+    window.musicStart = true;
+    bgm.play()
+  }
   window.musicStart = false;
   document.addEventListener('touchmove',function(e){
     e.preventDefault();
   })
-  // togglePage3(2)
+  togglePage3(2)
   if(from_page=='hotel'){
     addWeiXinEvent('hotel')
   }
@@ -26,6 +32,7 @@
     onComplete: function(total) {
       setTimeout(function(){
         $('.loading span').fadeIn();
+        $('.loading img').fadeIn();
         $('.loading').removeClass('loading')
       },2000)
       // $('.loading').hide();
@@ -37,10 +44,7 @@
   $('.load span').click(function(){
     $('.load').hide();
     $('.video').fadeIn();
-    $('.music_play').fadeIn();
-    $(".music_play").addClass("xz");
-    window.musicStart = true;
-    bgm.play()
+    // playBgm()
     if(from_page=='web'){
       $('.web').show();
       video_web.play();

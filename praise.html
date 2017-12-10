@@ -26,18 +26,18 @@
 <div class="share_mask hide"><img src="img/share.png"></div>
 <div id="praiseContainer">
     <img src="" class="bg">
-    <div class="page_text">长按保存</div>
-    <div class="praise" onclick="clickFollow()">
-        <img src="img/darre/praise_icon_03.png" alt="">
+    <!-- <div class="page_text">长按保存</div> -->
+    <div class="praise">
+        <img class="follow" onclick="clickFollow()" src="img/darre/follow.png" alt="">
+        <img class="followed" onclick="" src="img/darre/followed.png" style="display:none">
         <div class="text"></div>
     </div>
     <!-- <div class="click">
         <img src="img/darre/praise_click_15.png" alt="">
     </div> -->
     <div class="iframe"></div>
-    <div class="link" style="top:10.6rem" onclick="goRank()">进入爱乐之途唱片排行榜</div>
-    <div class="link" style="top:11rem" onclick="share()">邀请好友一起不期而遇</div>
-    <div class="link" style="top:11.4rem" onclick="go()">重新体验爱乐之途</div>
+    <div class="link go_rank" style="top:9.2rem" onclick="goRank()"></div>
+    <div class="link" style="top:10.8rem" onclick="go()">重新体验</div>
 </div>
 <script type="text/javascript">
   (function (doc, win) {
@@ -71,27 +71,33 @@
   if(!localStorage.id||localStorage.id=='undefined'){
     login(code,function(data){
       getDetail(data.user.id,detail_id,function(data){
-        init(data.user.image,data.user.follow,data.user.song_list,data.user.id)
+        init(data.user.image,data.user.follow,data.user.song_list,data.user.id,data.has_follow)
       })
     })
   }else{
     getDetail(localStorage.id,detail_id,function(data){
-      init(data.user.image,data.user.follow,data.user.song_list,data.user.id)
+      init(data.user.image,data.user.follow,data.user.song_list,data.user.id,data.has_follow)
     })
   }
 
-  function init(bg,follow,song_list,user_id){
+  function init(bg,follow,song_list,user_id,has_follow){
     $('.bg').attr('src',bg);
     $('.text').html(follow);
     iframe = getXiamiPlayerById(song_list);
     $('.iframe').html(iframe);
     addWeiXinEvent('web',user_id)
+    if(has_follow){
+      $('.follow').hide();
+      $('.followed').show();
+    }
   }
   function clickFollow(){
     follow(localStorage.id,detail_id,function(data){
       if(data.status=='success'){
         alert('点赞成功~');
-        $('.text').html(parseInt($('.text').html())+1)
+        $('.text').html(parseInt($('.text').html())+1);
+        $('.follow').hide();
+        $('.followed').fadeIn();
       }else{
         alert('你已经点过赞啦~')
       }

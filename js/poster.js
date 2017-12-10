@@ -2,7 +2,8 @@ var img_base64 = '';
 var layer_index = 1;
 var is_click_change_layer = false;
 var pc = new PhotoClip('.view', {
-  size: [document.documentElement.clientWidth,document.documentElement.clientHeight],
+  size: [document.documentElement.clientWidth,document.documentElement.clientWidth],
+  // size: [document.documentElement.clientWidth,document.documentElement.clientHeight],
   outputSize: document.documentElement.clientWidth,
   //adaptive: ['60%', '80%'],
   file: '#file',
@@ -23,6 +24,9 @@ var pc = new PhotoClip('.view', {
   },
   done: function(dataUrl) {
     $('.poster .bg').attr('src',dataUrl);
+    setTimeout(function(){
+      grayscale(document.getElementById("gray"));
+    },200)
     $('.clip').fadeOut();
     $('.poster').fadeIn(800);
     setTimeout(function(){

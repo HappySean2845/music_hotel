@@ -18,9 +18,9 @@
   <meta name="x5-page-mode" content="app">
   <meta name="msapplication-tap-highlight" content="no">
   <title>听见不同 想住就住</title>
-  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="css/base.css?id=2">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
-  <link rel="stylesheet" type="text/css" href="css/darre.css">
+  <link rel="stylesheet" type="text/css" href="css/darre.css?id=2">
   <link rel="stylesheet" type="text/css" href="css/shake.css">
   <script>
     var _hmt = _hmt || [];
@@ -33,15 +33,16 @@
     </script>
 </head>
 <body>
-  <audio loop="true" sytle="display:none" id="BGM">
+  <!-- <audio loop="true" sytle="display:none" id="BGM">
     <source src="audio/bgm.mp3?kjk=0" type="audio/mpeg"></source>
-  </audio>
-  <div class="music_play"><img src="img/music.png"></div>
+  </audio> -->
+  <!-- <div class="music_play"><img src="img/music.png"></div> -->
   <div class="mask hide"></div>
   <div class="share_mask hide"><img src="img/share.png"></div>
   <div id="container" class="content">
-    <div class="part loading load">
+    <div class="part loading load hide">
       <span>谁是这个音乐故事的主角？</span>
+      <img src="img/click_into.png">
     </div>
     <div class="part video hide">
       <video class="hotel hide"  id='hotel' x-webkit-airplay="true" preload="auto" x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true" x5-video-orientation="portrait" src="video/hotel.mp4">
@@ -127,7 +128,7 @@
 
     <!-- 第三页 -->
     <div class="part part_3 hide" id="scene">
-      <div class="back">重新选择</div>
+      <div class="back"><重新选择</div>
       <div class="layer layer_1 head_bg head_bg1 hide" data-scalar-x='30.0' data-scalar-y='30.0'>
         <img data-depth="0.15" src="img/citigo.png">
         <div data-depth="0.00" class="article">
@@ -202,7 +203,7 @@
     <div class="will_hide">
       <!-- <div class="title">长按保存</div> -->
       <div class="html2canvas">
-        <img class="bg" src="">
+        <img class="bg" id="gray" src="">
         <img class="layer" src="">
       </div>
       <div class="btn_group">
@@ -212,8 +213,8 @@
         <div class="poster_share"></div>
       </div>
       <div class="btn_group_next">
-        <div class="hint goto_rank">参与爱乐之途唱片排行榜</div>
-        <div class="hint share">邀请好友共享爱乐之途</div>
+        <div class="hint goto_rank"></div>
+        <div class="hint share"></div>
       </div>
       <div class="hint"></div>
     </div>
@@ -342,10 +343,11 @@
   <script type="text/javascript" src="js/libs/maskword.js"></script>
   <script type="text/javascript" src="js/libs/resLoader.js"></script>
   <script type="text/javascript" src="js/libs/loadJS.js"></script>
+  <script type="text/javascript" src="js/libs/gray.js"></script>
   <script type="text/javascript" src="js/xiami_music.js"></script>
   <script type="text/javascript" src="js/poster.js?id=1"></script>
   <script type="text/javascript" src="js/api.js"></script>
   <script type="text/javascript" src="js/share.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/index.js?id=2"></script>
 </body>
 </html>

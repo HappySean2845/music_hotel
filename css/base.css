@@ -44,6 +44,13 @@ html, body {
   color: #eee;
   line-height: 10rem;
 }
+.load img{
+  display:none;
+  width: 1.5rem;
+  position: absolute;
+  top: 39%;
+  left: 70%;
+}
 .content, .part {
   width: 100%;
   height: 100%;
@@ -192,6 +199,12 @@ html, body {
   left: 0;
   background-repeat: repeat-x;
   background-size: cover;
+/*  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;*/
 }
 
 .part_1 .line_bg {
@@ -397,6 +410,7 @@ html, body {
   top: 0.5rem;
   left: 0.5rem;
   text-decoration: underline;
+  z-index:25;
 }
 .part_3 .theme_p {
   position: absolute;
@@ -564,6 +578,10 @@ canvas{
   top:0;left:0;
   width:100%;height:100%;
 }
+.clip{
+  background:url(../img/p1_bg.jpg) top no-repeat;
+  background-size:100%;
+}
 .clipBtn{
   position:absolute;
   background:url(../img/layer/clip.png ) center no-repeat;
@@ -603,22 +621,22 @@ canvas{
   /*top:0;left:0;
   width:100%;
   height:12.06rem;*/
-  width: 6.63rem;
-  height: 8.07rem;
+  width: 7.5rem;
+  height: 7.5rem;
 }
 .poster .bg{
   height:auto !important;
 }
 .poster .html2canvas{
-  left: .46rem;
-  top: 0.4rem;
+  left: 0rem;
+  top:0rem;
   overflow:hidden;
 }
 .poster .final{
-  width: 6.63rem;
-  height: 8.07rem;
-  left: .46rem;
-  top: 0.4rem;
+  width: 7.5rem;
+  height: 7.5rem;
+  left: 0rem;
+  top:0rem;
 }
 .poster .bg{
   z-index:1;
@@ -636,7 +654,7 @@ iframe{
 .poster .btn_group{
   position:absolute;
   z-index:3;
-  top:8.8rem;
+  top:7.8rem;
   width:100%;
 }
 .poster .btn_group .btn{
@@ -669,17 +687,23 @@ iframe{
 .poster .btn_group_next{
   display:none;
   position: absolute;
-  top:8.4rem;
+  top:7.06rem;
   width: 100%;
   height: 3rem;
 }
 .poster .btn_group_next .hint{
-  text-decoration: underline;
-  font-size:0.3rem;
-  color:#fff;
   width:100%;
-  text-align:center;
-  margin-top:0.1rem;
+  height:1rem;
+  background-size:5.16rem .96rem;
+  background-position:center;
+  background-repeat:no-repeat;
+  margin-top:0.3rem;
+}
+.poster .btn_group_next .hint.goto_rank{
+  background-image: url(../img/layer/go_rank.png)
+}
+.poster .btn_group_next .hint.share{
+  background-image: url(../img/layer/share.png)
 }
 .share_mask{
   position:absolute;
