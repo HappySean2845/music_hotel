@@ -79,3 +79,10 @@ function changeLayer(){
     },1000)
   }
 }
+//点击set自己的分享
+$('.btn_group .submit').click(function(){
+  addWeiXinEvent('self',localStorage.id);
+})
+$('.btn_group .poster_share').click(function(){
+  addWeiXinEvent('self',localStorage.id);
+})

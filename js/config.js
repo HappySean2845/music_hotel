@@ -1,9 +1,9 @@
 // var BASE_URL = 'http://www.adleading.com/huazhu/music_hotel/';
-var BASE_URL = 'http://192.168.1.5/git/music_hotel/';
+var BASE_URL = 'http://192.168.1.2/git/music_hotel/';
 var Config = {
   MAX_PIC_SIZE     : 5242880,
   // BASE_URL         : 'http://www.adleading.com/huazhu/music_hotel/',
-  BASE_URL         : 'http://192.168.1.5/git/music_hotel/',
+  BASE_URL         : 'http://192.168.1.2/git/music_hotel/',
   // API_URL       : 'http://localhost/git/www.adleading.com/api/huazhu/',            //测试
   API_URL          : 'http://www.adleading.com/api/huazhu/',            //正式
   SIGN_KEY         : '127huazhugdmh8z',

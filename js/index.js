@@ -9,11 +9,17 @@
     window.musicStart = true;
     bgm.play()
   }
+  function stopBgm(){
+    $('.music_play').fadeOut();
+    $(".music_play").removeClass("xz");
+    window.musicStart = false;
+    bgm.pause()
+  }
   window.musicStart = false;
   document.addEventListener('touchmove',function(e){
     e.preventDefault();
   })
-  togglePage3(2)
+  // togglePage3(2)
   if(from_page=='hotel'){
     addWeiXinEvent('hotel')
   }
@@ -44,7 +50,7 @@
   $('.load span').click(function(){
     $('.load').hide();
     $('.video').fadeIn();
-    // playBgm()
+    playBgm()
     if(from_page=='web'){
       $('.web').show();
       video_web.play();
@@ -117,6 +123,7 @@
     }
   });
   function togglePage2(){
+    stopBgm();
     $('.part_1').removeClass('animate');
     $('.part_1').fadeOut(500);
     $('.part_2').fadeIn(500);
@@ -257,8 +264,8 @@
 
   })
   function btnCancel(){
-    // goFollow(localStorage.id);
-    $('.share_mask').fadeIn();
+    goFollow(localStorage.id);
+    // $('.share_mask').fadeIn();
   }
   $("#topContainer .how").click(function(){
     console.log("出玩法提示");

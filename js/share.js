@@ -31,6 +31,7 @@ wx.ready(function() {
     //                wx.hideOptionMenu();
     addWeiXinEvent('web');
 });
+//from是酒店还是web，id是用户id
 var addWeiXinEvent = function(from,id) {
     if(from=='web'){
         $.shareUrl = Config.ORIGIN_WEB_URL;
