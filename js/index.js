@@ -19,7 +19,7 @@
   document.addEventListener('touchmove',function(e){
     e.preventDefault();
   })
-  // togglePage3(2)
+  togglePage3(2)
   if(from_page=='hotel'){
     addWeiXinEvent('hotel')
   }
@@ -85,11 +85,11 @@
   //登录
   var code = $_GET('code');
   console.log('code:',code);
-  if(!localStorage.id||localStorage.id=='undefined'){
-    login(code,function(data){
-      console.log(data)
-    })
-  }
+  // if(!localStorage.id||localStorage.id=='undefined'){
+  //   login(code,function(data){
+  //     console.log(data)
+  //   })
+  // }
   var pic_base64 = '';
   var p1_btn = document.getElementById("p1_btn");
   var dis_tim = 500;

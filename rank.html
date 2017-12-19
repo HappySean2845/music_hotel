@@ -93,6 +93,13 @@
   <script type="text/javascript" src="js/api.js"></script>
   <script type="text/javascript" src="js/share.js"></script>
   <script>
+    $('.music_icon').on('touchmove',function(e){
+      console.log(e.target);
+      if(e.target==$('.music_icon')[0]){
+        e.preventDefault();
+      }
+      // e.preventDefault();
+    })
     var id = localStorage.id || 4
     getRank(id,function(o){
       // if(o&&o.length>=1){

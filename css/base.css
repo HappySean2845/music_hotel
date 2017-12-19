@@ -564,8 +564,8 @@ html, body {
   background-size: 100%;
 }
 canvas{
-  width:7.5rem;
-  height:100%;
+ /* width:7.5rem;
+  height:100%;*/
 }
 #file{
   position:absolute;

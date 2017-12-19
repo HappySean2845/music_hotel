@@ -30,14 +30,11 @@ var pc = new PhotoClip('.view', {
     $('.clip').fadeOut();
     $('.poster').fadeIn(800);
     setTimeout(function(){
-      html2canvas(document.querySelector('.html2canvas'), {
-        onrendered: function(canvas) {
-          $('.html2canvas').hide();
-          // $('.layer').after(canvas);
-          img_base64 = canvas.toDataURL("image/jpeg", 1);
-          $('.final').attr('src',img_base64);
-        },
-        // logging : true,
+      html2canvas(document.querySelector('.html2canvas')).then(function(canvas) {
+        $('.html2canvas').hide();
+        // $('.layer').after(canvas);
+        img_base64 = canvas.toDataURL("image/jpeg", 1);
+        $('.final').attr('src',img_base64).show();
       });
     },1000)
 
@@ -64,14 +61,11 @@ function changeLayer(){
     $('.final').hide();
     $('.poster .layer').attr('src','img/layer/'+layer_index+'.png');
     setTimeout(function(){
-      html2canvas(document.querySelector('.html2canvas'), {
-        onrendered: function(canvas) {
-          $('.html2canvas').hide();
-          // $('.layer').after(canvas);
-          img_base64 = canvas.toDataURL("image/jpeg", 1);
-          $('.final').attr('src',img_base64).show();
-        },
-        // logging : true,
+      html2canvas(document.querySelector('.html2canvas')).then(function(canvas) {
+        $('.html2canvas').hide();
+        // $('.layer').after(canvas);
+        img_base64 = canvas.toDataURL("image/jpeg", 1);
+        $('.final').attr('src',img_base64).show();
       });
     },800)
     setTimeout(function(){
